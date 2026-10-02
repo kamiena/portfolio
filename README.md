@@ -1,14 +1,17 @@
 # KamiEna Portfolio
 
 インディーゲームクリエイター **カミエナ（KamiEna）** のポートフォリオサイトです。
-フレームワークなしの静的サイト（HTML / CSS / JavaScript）なので、そのまま GitHub Pages などで公開できます。
+フレームワークなしの静的サイト（HTML / CSS / JavaScript）なので、そのまま GitHub Pages で公開できます。
+
+公開URL：https://kamiena.github.io/portfolio/
 
 ## ファイル構成
 
 ```
-index.html              … ページ本体（作品カード・作品詳細モーダルもすべてここ）
-assets/css/style.css    … デザイン（色は :root の変数で一括管理）
-assets/js/main.js       … メニュー開閉・スクロール演出・作品フィルター・詳細モーダル・YouTube 読み込み
+index.html              … ページ本体（日本語の原文・作品カード・作品詳細モーダルもすべてここ）
+assets/css/style.css    … デザイン（色やフォントは :root の変数で一括管理）
+assets/js/main.js       … 言語切り替え・メニュー・スクロール演出・作品フィルター・詳細モーダル・YouTube 読み込み
+assets/i18n/<言語>.js   … 翻訳（en / zh-Hans / zh-Hant / ko / fr / de / es / it）
 assets/img/             … 画像（WebP に最適化済み）
   icon.webp             … アイコン
   ogp.jpg               … SNS シェア用画像（1200×630）
@@ -19,37 +22,87 @@ assets/img/             … 画像（WebP に最適化済み）
 
 ```sh
 python3 -m http.server 8000
-# → http://localhost:8000 を開く
+# → http://localhost:8000 を開く（言語を指定するなら http://localhost:8000/?lang=en など）
 ```
 
-## GitHub Pages で公開する
+## 多言語対応（9言語）
+
+『ガーデンハント』公式サイトと同じ9言語に対応しています：
+日本語・English・简体中文・繁體中文・한국어・Français・Deutsch・Español・Italiano
+
+- **表示される言語の決まり方**：URL の `?lang=xx` → 前回選んだ言語 → ブラウザの言語 → 対応外なら英語（検索エンジンのクローラーには日本語）
+- 右上の 🌐 ボタンかフッターの言語リンクで切り替えられます。選んだ言語は記憶されます。
+- 各言語のURL：`https://kamiena.github.io/portfolio/?lang=en` のように `?lang=` を付けるだけ
+  （`en` `zh-Hans` `zh-Hant` `ko` `fr` `de` `es` `it`。日本語は付けなくてOK）
+- 作品詳細への直リンクと組み合わせることもできます：`…/?lang=fr#work-garden-hunt`
+
+### 文章を直す・追加するとき
+
+1. **日本語**は `index.html` に直接書かれています。翻訳される要素には `data-i18n="キー名"` が付いています。
+   - `data-i18n` … 文字だけ
+   - `data-i18n-html` … `<br>` や `<strong>` などのタグを含む文章
+   - `data-i18n-attr="alt:キー名"` … 画像の代替テキストなど属性の翻訳
+2. **ほかの言語**は `assets/i18n/<言語>.js` の同じキー名の行を書き換えます。
+3. 新しい文章を足すときは、`index.html` に `data-i18n="新しいキー"` を付けて日本語を書き、
+   8つの言語ファイルにも同じキーを追加してください（訳がないキーは日本語のまま表示されます）。
+
+固有名詞の表記は、ゲーム内の公式訳（『ガーデンハント』の Meina・Slugnail・Numeri Trails など）と CÔGEIMU 公式サイトの英語表記に合わせています。
+
+## GitHub Pages で公開・更新する
 
 1. GitHub のリポジトリ → **Settings → Pages**
 2. Source を **Deploy from a branch**、Branch を `main` / `/ (root)` にして保存
-3. 数分後に `https://kamiena.github.io/portfolio/` で公開されます
+3. `main` に変更が入ると、数分で `https://kamiena.github.io/portfolio/` に反映されます
 
-独自ドメインなど別の URL で公開する場合は、`index.html` の `og:url` / `og:image` / JSON-LD 内の URL を書き換えてください。
+独自ドメインなど別の URL で公開する場合は、`index.html` の `og:url` / `og:image` / `hreflang` / JSON-LD 内の URL を書き換えてください。
+シェア画像（`ogp.jpg`）を差し替えたときは、`og:image` の末尾の `?v=日付` も変えると SNS 側のキャッシュが更新されやすくなります。
 
 ## よくある編集
 
 - **色を変える**：`assets/css/style.css` 冒頭の `--sky` `--pink` `--yellow` `--orange` `--lime` などを変更
-- **作品を追加する**：`index.html` の `<!-- ガーデンハント -->` のような `<article class="work-card">` と、下のほうの同名 `<dialog class="work-modal">` をコピーして中身を差し替え。
-  カードの `data-open-work="xxx"` とモーダルの `id="work-xxx"` を同じ名前にするとつながります。
-  作品カードの色は `t-lime` / `t-purple` / `t-orange` / `t-pink` / `t-sky` から選べます。
-- **画像を差し替える**：`assets/img/works/<作品>/` に同じファイル名で上書き（横長 16:9、幅 1280px 程度がおすすめ）
-- **作品詳細への直リンク**：`https://…/#work-garden-hunt` のように URL 末尾に `#work-作品名` を付けると、その作品の詳細が開いた状態で表示されます
+- **作品を追加する**：`index.html` の `<article class="work-card">` と、下のほうの同名 `<dialog class="work-modal">` をコピーして中身を差し替え。
+  - カードの `data-open-work="xxx"` とモーダルの `id="work-xxx"` を同じ名前にするとつながります。
+  - カードの `data-cat` は `digital`（デジタルゲーム）/ `analog`（アナログゲーム）/ `art`（アート・AR）のどれか。上の絞り込みボタンと対応しています。
+  - カードの色は `t-lime` / `t-yellow` / `t-purple` / `t-orange` / `t-pink` / `t-sky` から選べます。
+- **画像を差し替える**：`assets/img/works/<作品>/` に同じファイル名で上書き（横長 16:9、幅 1280px 程度がおすすめ）。
+  画像は切り抜かずに全体を表示し、余白はぼかした同じ画像で埋める作りなので、縦長・正方形の画像でも文字やロゴは切れません。
+- **作品詳細への直リンク**：URL 末尾に `#work-作品名` を付けると、その作品の詳細が開いた状態で表示されます
+  （`#work-garden-hunt` / `#work-traps` / `#work-cogeimu` / `#work-immersive-novel` / `#work-crea-chan` / `#work-bunmawashi`）
+
+## X（旧Twitter）のポストからニュースを拾うには
+
+サイトの「これまでのあゆみ」は、X のポストを日付ごとに検索して作りました。今後も更新する場合の方法です。
+
+- **いちばん確実**：X の「設定 → アカウント → データのアーカイブをダウンロード」で届く `tweets.js` に全ポストが入っています。
+  これを渡してもらえれば、出展・発表・出演などをまとめて年表に反映できます。
+- **手軽な方法**：ログイン不要の非公式 API（FxTwitter）でもプロフィールや期間を指定したポスト検索ができます。
+  ただし非公式なので、仕様変更で使えなくなる可能性があります。
 
 ## 追加でほしい素材（あるとさらに良くなるもの）
 
+前回からのお願い
 - [ ] アイコンキャラの **全身・立ち絵イラスト（透過 PNG）** … ABOUT やヒーローで大きく使いたい
 - [ ] アイコンの **高解像度・透過版**（今は Web 上の画像から切り出し）
 - [ ] 各作品キャラの **透過立ち絵**（メイナ、クレアちゃん、フォルテなど）
 - [ ] **CÔGEIMU** の展示写真（高解像度、会場の雰囲気がわかるもの）
 - [ ] **Immersive Novel** を実際に渋谷で体験している様子の写真
-- [ ] **イベント出展の写真**（コミケ、東京ゲームダンジョン、SHIBUYA GAMES WEEK、TGS / BitSummit など）
-- [ ] X のヘッダー画像など、サイト全体のキービジュアルに使える横長イラスト
+- [ ] **イベント出展の写真**（コミケ、東京ゲームダンジョン、SHIBUYA GAMES WEEK など）
+- [ ] サイト全体のキービジュアルに使える **横長イラスト**（X のヘッダー画像など）
+
+今回追加
+- [ ] **トラップス**：キービジュアルの元データ（1920×1080）、カード・ルールがわかる画像、クマチの透過イラスト
+- [ ] **テレビ出演**：使ってよい番組のスチル・スタジオでの写真（BSフジ『界隈ほーる』、NHK『首都圏ネットワーク』）
+- [ ] **ガーデンハント**：パッケージ版の写真、「404 Not Found」の筐体展示の写真、グッズ写真（フィギュア・ぬいぐるみなど）
+- [ ] **コミケ C104〜C108** のブース写真
+- [ ] **シンポジウム登壇**（2026年5月・立命館大学）の写真
+- [ ] **ラジオ「クレアクランカフェ」・ゲーム制作相談室** の横長バナー（今は正方形の画像を余白つきで表示）
+- [ ] 処女作 **『ちんあなご』** の画面やイラスト
+- [ ] **TGS2018 / Connect Fest 2018** の『ぶんまわしヒーロー』展示写真
 
 ## 情報の出典
 
 - クレアクラン公式HP（カミエナのページ）: https://sites.google.com/view/creaclan/creator/kamiena
-- 各作品の Steam ストアページ、掲載記事（サイト内の「掲載メディア」を参照）
+- X（@KamiEna_Game）のポスト
+- GameArtPRJ CÔGEIMU 公式サイト: https://kamiena.github.io/cogeimu/
+- 『ガーデンハント』公式サイト: https://kamiena.github.io/GardenHunt/
+- 各作品の Steam ストアページ、掲載記事・番組（サイト内の「MEDIA」と各作品の「掲載メディア」を参照）
