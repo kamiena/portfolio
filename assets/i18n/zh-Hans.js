@@ -677,5 +677,13 @@
   "p.cg.11": "art bit #6：Game Playing Society",
   "p.cg.12": "现代艺术×独立游戏展览“art bit #6：Game Playing Society”举办通知",
   "p.cg.13": "“游玩”曾是改造世界的技术。游戏与现代艺术提出的另一种可能｜art bit #6 展览报道",
-  "p.in.4": "【公众投票开始！】使用 STYLY 的全部6个项目参选全球最大 XR 大会 AWE 的“AUGGIE AWARDS 2025”"
+  "p.in.4": "【公众投票开始！】使用 STYLY 的全部6个项目参选全球最大 XR 大会 AWE 的“AUGGIE AWARDS 2025”",
+  "hist.filterLabel": "筛选经历",
+  "hist.f.all": "全部",
+  "hist.f.release": "发布・发表",
+  "hist.f.event": "参展・展示",
+  "hist.f.media": "媒体・获奖・演讲",
+  "hist.f.life": "活动・里程碑",
+  "hist.more": "查看更多（还有{n}条）",
+  "hist.less": "收起"
 };
