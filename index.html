@@ -438,9 +438,17 @@
             <div class="clan-card reveal">
               <img src="assets/img/creaclan-logo.webp" alt="クレアクラン（CREA CLAN）ロゴ" data-i18n-attr="alt:about.clanAlt" width="720" height="462" loading="lazy">
               <div>
-                <h3 data-i18n="about.clanName">クレアクラン（CREA CLAN）</h3>
+                <h3 data-i18n="about.clanName">クレアクラン（CREA&nbsp;CLAN）</h3>
                 <p data-i18n="about.clanText">kawaii をキーワードに活動するインディーゲームスタジオ。2020年に立ち上げ、Steam やスマホアプリなど複数のプラットフォームでゲームを配信。コミックマーケットや東京ゲームダンジョンなどのイベントにも出展しています。</p>
                 <a class="btn btn--sm btn--white" href="https://sites.google.com/view/creaclan" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span data-i18n="about.clanLink">クレアクラン公式HP</span></a>
+              </div>
+              <div class="clan-mascots">
+                <p class="clan-mascots-label" data-i18n="about.mascots">クレアクランの看板娘</p>
+                <ul class="mascots">
+                  <li><button class="mascot" type="button" data-open-work="garden-hunt" style="--c:var(--yellow-soft)"><span class="mascot-img"><img src="assets/img/mascot-meina.webp" alt="" width="400" height="376" loading="lazy"></span><b data-i18n="gh.ch.meina.name">メイナ</b><small><span data-i18n="wn.gh">ガーデンハント</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></button></li>
+                  <li><button class="mascot" type="button" data-open-work="crea-chan" style="--c:var(--sky-soft)"><span class="mascot-img"><img src="assets/img/mascot-crea.webp" alt="" width="365" height="400" loading="lazy"></span><b data-i18n="mascot.crea">クレア</b><small><span data-i18n="wn.cr">走れ！クレアちゃん</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></button></li>
+                  <li><button class="mascot" type="button" data-open-work="traps" style="--c:var(--orange-soft)"><span class="mascot-img"><img src="assets/img/mascot-kumachi.webp" alt="" width="400" height="365" loading="lazy"></span><b data-i18n="tr.ch.name">クマチ</b><small><span data-i18n="wn.tr">トラップス</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></button></li>
+                </ul>
               </div>
             </div>
 
@@ -981,13 +989,24 @@
             <div><dt data-i18n="dt.cardIllust">カードイラスト</dt><dd data-i18n="m.tr.card">みにに</dd></div>
           </dl>
         </div>
+        <div class="wm-block wm-block--full">
+          <h3 class="wm-h"><svg class="bolt" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-bolt"/></svg><span data-i18n="mh.chars">キャラクター</span></h3>
+          <div class="wm-chars wm-chars--solo">
+            <article class="wm-char" style="--c:var(--orange-soft)">
+              <div class="wm-char-img"><img src="assets/img/works/traps/chara-kumachi.webp" alt="クマチのイラスト。クマの着ぐるみ姿で、両手を上げて飛びかかるポーズ" data-i18n-attr="alt:tr.alt.kumachi" width="556" height="640" loading="lazy"></div>
+              <p class="wm-char-role" data-i18n="tr.ch.role">トラップスの看板娘</p>
+              <h4 class="wm-char-name" data-i18n="tr.ch.name">クマチ</h4>
+              <p data-i18n="tr.ch.desc">クマの着ぐるみを着た、いたずら好きな女の子。ハチミツが大好物。仕掛けられたトラップしだいで、あっちへこっちへ大さわぎ！</p>
+            </article>
+          </div>
+        </div>
         <div class="wm-block">
           <h3 class="wm-h"><svg class="bolt" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-bolt"/></svg><span data-i18n="mh.rules">遊び方</span></h3>
           <ul class="wm-list">
             <li data-i18n-html="m.tr.r1">自分のターンには<strong>「移動」</strong>と<strong>「セット」</strong>を行います。</li>
             <li data-i18n-html="m.tr.r2"><strong>移動</strong>：相手がセットしたトラップを見極めて、クマチを上下左右に1マス進め、足元のトラップの効果に従う。</li>
             <li data-i18n-html="m.tr.r3"><strong>セット</strong>：クマチの上下左右にあるトラップを表にしてお互いに確認したら、相手に見えないように並べ替えて、裏向きに置き直す。</li>
-            <li data-i18n-html="m.tr.r4"><strong>「スズ」</strong>系のトラップはクマチを進め、<strong>「ハチミツ」</strong>系のトラップはクマチを戻す。どこに置くかで、効果が大きく変わります。</li>
+            <li data-i18n-html="m.tr.r4">トラップには、クマチを進める<strong>「スズ」</strong>などと、クマチを戻す<strong>「ハチミツ」</strong>などがあります。どこに置くかで、効果が大きく変わります。</li>
           </ul>
           <p class="wm-note" data-i18n="m.tr.rnote">※ 企画段階のルールです。開発中のため、変更になる場合があります。</p>
         </div>
@@ -1002,6 +1021,17 @@
             <li data-i18n="m.tr.lv5">相手の熟練度やプレイスタイルを読んで遊ぶ</li>
           </ol>
           <p data-i18n="m.tr.d2">1〜2回遊べばコンセプトが体感でき、上達するほど次の目標が見えてくる。そんな奥深さを目指しています。</p>
+        </div>
+        <div class="wm-block wm-block--full">
+          <h3 class="wm-h"><svg class="bolt" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-bolt"/></svg><span data-i18n="mh.cards">トラップカード</span></h3>
+          <p data-i18n="m.tr.cardsLead">カードの数字は、クマチが進む（＋）・戻る（−）マスの数。どのカードをどこに置くかが勝負の分かれ目！</p>
+          <ul class="wm-cards">
+            <li><figure><img src="assets/img/works/traps/card-1.webp" alt="" width="392" height="391" loading="lazy"><figcaption><span class="wm-card-val">+1</span><span data-i18n="tr.card.1">スズ</span></figcaption></figure></li>
+            <li><figure><img src="assets/img/works/traps/card-2.webp" alt="" width="392" height="391" loading="lazy"><figcaption><span class="wm-card-val">−1</span><span data-i18n="tr.card.2">ハチミツ</span></figcaption></figure></li>
+            <li><figure><img src="assets/img/works/traps/card-3.webp" alt="" width="392" height="391" loading="lazy"><figcaption><span class="wm-card-val">+4</span><span data-i18n="tr.card.3">ドラ</span></figcaption></figure></li>
+            <li><figure><img src="assets/img/works/traps/card-4.webp" alt="" width="392" height="391" loading="lazy"><figcaption><span class="wm-card-val">+2</span><span data-i18n="tr.card.4">天使のスズ</span></figcaption></figure></li>
+            <li><figure><img src="assets/img/works/traps/card-5.webp" alt="" width="392" height="391" loading="lazy"><figcaption><span class="wm-card-val">−2</span><span data-i18n="tr.card.5">濃厚なハチミツ</span></figcaption></figure></li>
+          </ul>
         </div>
 
         <div class="wm-block wm-block--full">

@@ -540,7 +540,7 @@
   "m.tr.r1": "In deinem Zug machst du zwei Dinge: <strong>Ziehen</strong> und <strong>Legen</strong>.",
   "m.tr.r2": "<strong>Ziehen</strong>: Durchschaue die Fallen deines Gegenübers, bewege Kumachi ein Feld nach oben, unten, links oder rechts und führe den Effekt der Falle aus, auf der sie landet.",
   "m.tr.r3": "<strong>Legen</strong>: Decke die Fallen rund um Kumachi auf, damit beide sie sehen, ordne sie dann neu an, ohne dass dein Gegenüber zusieht, und lege sie wieder verdeckt hin.",
-  "m.tr.r4": "<strong>Glöckchen</strong>-Fallen bringen Kumachi voran, <strong>Honig</strong>-Fallen ziehen sie zurück. Wo du sie platzierst, macht den Unterschied.",
+  "m.tr.r4": "Manche Fallen bringen Kumachi voran, etwa das <strong>Glöckchen</strong>, andere ziehen sie zurück, etwa der <strong>Honig</strong>. Wo du sie platzierst, macht den Unterschied.",
   "m.tr.rnote": "* Regeln aus der frühen Planungsphase. Da sich das Spiel noch in Entwicklung befindet, können sie sich ändern.",
   "m.tr.d1": "Das Ziel: ein Spiel, <strong>das auch Menschen Spaß macht, die sonst kaum spielen</strong>. Wie bei Othello oder dem Kartenspiel Daifugō zeigen sich mit wachsendem Können Stufe für Stufe neue Ziele.",
   "m.tr.lv1": "Kumachi voranbringen",
@@ -548,5 +548,18 @@
   "m.tr.lv3": "Dein Gegenüber austricksen",
   "m.tr.lv4": "Den Spielverlauf vorhersehen und Fallen legen",
   "m.tr.lv5": "Können und Spielstil deines Gegenübers lesen",
-  "m.tr.d2": "Schon nach ein, zwei Partien spürst du das Konzept – und je besser du wirst, desto mehr neue Ziele tauchen auf. Genau diese Tiefe ist mein Ziel."
+  "m.tr.d2": "Schon nach ein, zwei Partien spürst du das Konzept – und je besser du wirst, desto mehr neue Ziele tauchen auf. Genau diese Tiefe ist mein Ziel.",
+  "about.mascots": "Die Maskottchen von CREA CLAN",
+  "mascot.crea": "Crea",
+  "tr.ch.role": "Das Gesicht von Traps",
+  "tr.ch.name": "Kumachi",
+  "tr.ch.desc": "Ein freches Mädchen im Bärenkostüm, das Honig über alles liebt. Je nach gelegten Fallen wuselt sie mal hierhin, mal dorthin!",
+  "tr.alt.kumachi": "Illustration von Kumachi im Bärenkostüm, die mit erhobenen Tatzen losspringt",
+  "mh.cards": "Fallenkarten",
+  "m.tr.cardsLead": "Die Zahl auf jeder Karte gibt an, wie viele Felder Kumachi vor (+) oder zurück (−) geht. Welche Karte du wohin legst, entscheidet das Spiel!",
+  "tr.card.1": "Glöckchen",
+  "tr.card.2": "Honig",
+  "tr.card.3": "Gong",
+  "tr.card.4": "Engels\u00adglöckchen",
+  "tr.card.5": "Dicker Honig"
 };

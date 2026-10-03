@@ -540,7 +540,7 @@
   "m.tr.r1": "Nel tuo turno fai due cose: <strong>Muovi</strong> e <strong>Piazza</strong>.",
   "m.tr.r2": "<strong>Muovi</strong>: intuisci le trappole piazzate dall'avversario, sposta Kumachi di una casella in alto, in basso, a sinistra o a destra e applica l'effetto della trappola su cui finisce.",
   "m.tr.r3": "<strong>Piazza</strong>: scopri le trappole intorno a Kumachi così che entrambi le vedano, poi riordinale senza farti vedere dall'avversario e rimettile coperte.",
-  "m.tr.r4": "Le trappole <strong>Campanella</strong> fanno avanzare Kumachi, quelle <strong>Miele</strong> la fanno indietreggiare. Dove le piazzi cambia tutto.",
+  "m.tr.r4": "Alcune trappole fanno avanzare Kumachi, come la <strong>Campanella</strong>, altre la fanno indietreggiare, come il <strong>Miele</strong>. Dove le piazzi cambia tutto.",
   "m.tr.rnote": "* Sono le regole della fase di progettazione. Il gioco è ancora in sviluppo, quindi potrebbero cambiare.",
   "m.tr.d1": "L'obiettivo: un gioco <strong>che possa divertire anche chi gioca raramente</strong>. Come l'Othello o il gioco di carte Daifugō, è pensato perché nuovi obiettivi emergano livello dopo livello, man mano che si migliora.",
   "m.tr.lv1": "Far avanzare Kumachi",
@@ -548,5 +548,18 @@
   "m.tr.lv3": "Ingannare l'avversario",
   "m.tr.lv4": "Prevedere le mosse e piazzare le trappole",
   "m.tr.lv5": "Leggere il livello e lo stile dell'avversario",
-  "m.tr.d2": "Bastano una o due partite per cogliere il concetto, e più migliori, più nuovi obiettivi compaiono. È questa la profondità a cui punto."
+  "m.tr.d2": "Bastano una o due partite per cogliere il concetto, e più migliori, più nuovi obiettivi compaiono. È questa la profondità a cui punto.",
+  "about.mascots": "Le mascotte di CREA CLAN",
+  "mascot.crea": "Crea",
+  "tr.ch.role": "Il volto di Traps",
+  "tr.ch.name": "Kumachi",
+  "tr.ch.desc": "Una ragazza dispettosa in costume da orso, golosissima di miele. A seconda delle trappole piazzate, corre di qua e di là combinando un gran caos!",
+  "tr.alt.kumachi": "Illustrazione di Kumachi nel suo costume da orso, che salta con le zampe alzate",
+  "mh.cards": "Carte trappola",
+  "m.tr.cardsLead": "Il numero su ogni carta indica di quante caselle Kumachi avanza (+) o indietreggia (−). Quale carta piazzare e dove: è lì che si decide la partita!",
+  "tr.card.1": "Campanella",
+  "tr.card.2": "Miele",
+  "tr.card.3": "Gong",
+  "tr.card.4": "Campanella d'angelo",
+  "tr.card.5": "Miele denso"
 };

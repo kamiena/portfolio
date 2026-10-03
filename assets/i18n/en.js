@@ -540,7 +540,7 @@
   "m.tr.r1": "On your turn, you do two things: <strong>Move</strong> and <strong>Set</strong>.",
   "m.tr.r2": "<strong>Move</strong>: read the traps your opponent has set, move Kumachi one space up, down, left or right, and follow the effect of the trap she lands on.",
   "m.tr.r3": "<strong>Set</strong>: flip the traps around Kumachi face up so both players can see them, then rearrange them out of your opponent's sight and place them face down again.",
-  "m.tr.r4": "<strong>Bell</strong> traps move Kumachi forward and <strong>Honey</strong> traps pull her back. Where you place them changes everything.",
+  "m.tr.r4": "Traps include ones that move Kumachi forward, like the <strong>Bell</strong>, and ones that pull her back, like the <strong>Honey</strong>. Where you place them changes everything.",
   "m.tr.rnote": "* These are the rules from the early planning stage. The game is still in development, so they may change.",
   "m.tr.d1": "The goal is a game that <strong>even people who rarely play games can enjoy</strong>. Like Othello or the card game Daifugō, it is designed so that new goals reveal themselves layer by layer as players improve.",
   "m.tr.lv1": "Move Kumachi forward",
@@ -548,5 +548,18 @@
   "m.tr.lv3": "Outsmart your opponent",
   "m.tr.lv4": "Predict what's coming and set traps ahead",
   "m.tr.lv5": "Read your opponent's skill and play style",
-  "m.tr.d2": "You can feel the concept in just one or two plays, and the better you get, the more new goals appear. That's the depth I'm aiming for."
+  "m.tr.d2": "You can feel the concept in just one or two plays, and the better you get, the more new goals appear. That's the depth I'm aiming for.",
+  "about.mascots": "CREA CLAN's mascot girls",
+  "mascot.crea": "Crea",
+  "tr.ch.role": "The face of Traps",
+  "tr.ch.name": "Kumachi",
+  "tr.ch.desc": "A mischievous girl in a bear costume who loves honey more than anything. Depending on the traps you set, she goes charging this way and that!",
+  "tr.alt.kumachi": "Illustration of Kumachi in her bear costume, leaping with both paws raised",
+  "mh.cards": "Trap cards",
+  "m.tr.cardsLead": "The number on each card is how many spaces Kumachi moves forward (+) or back (−). Which card you put where decides the game!",
+  "tr.card.1": "Bell",
+  "tr.card.2": "Honey",
+  "tr.card.3": "Gong",
+  "tr.card.4": "Angel Bell",
+  "tr.card.5": "Rich Honey"
 };
