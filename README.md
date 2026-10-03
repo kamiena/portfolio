@@ -27,7 +27,7 @@ python3 -m http.server 8000
 
 ## 多言語対応（9言語）
 
-『ガーデンハント』公式サイトと同じ9言語に対応しています：
+『ガーデンハント』と同じ9言語に対応しています：
 日本語・English・简体中文・繁體中文・한국어・Français・Deutsch・Español・Italiano
 
 - **表示される言語の決まり方**：URL の `?lang=xx` → 前回選んだ言語 → ブラウザの言語 → 対応外なら英語（検索エンジンのクローラーには日本語）
@@ -132,5 +132,4 @@ X には「特定のハッシュタグのポストだけを並べてサイトに
 - クレアクラン公式HP（カミエナのページ）: https://sites.google.com/view/creaclan/creator/kamiena
 - X（@KamiEna_Game）のポスト
 - GameArtPRJ CÔGEIMU 公式サイト: https://kamiena.github.io/cogeimu/
-- 『ガーデンハント』公式サイト: https://kamiena.github.io/GardenHunt/
 - 各作品の Steam ストアページ、掲載記事・番組（サイト内の「MEDIA」と各作品の「掲載メディア」を参照）

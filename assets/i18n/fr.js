@@ -229,7 +229,7 @@
   "l.yt.d": "YouTube / radio « CREA CLAN Cafe »",
   "l.booth.t": "CREA CLAN sur BOOTH",
   "l.booth.d": "Goodies & jeux",
-  "l.gh.t": "Site officiel de Garden Hunt",
+  "l.gh.t": "Garden Hunt sur Steam",
   "l.cg.t": "Site officiel de PRJ CÔGEIMU",
   "footer.note": "Les captures de jeu, illustrations et vidéos présentées appartiennent à leurs ayants droit respectifs.",
 
@@ -510,7 +510,6 @@
   "gh.alt.meina": "Illustration de Meina en pied : une jeune Slugnail en manteau jaune",
   "gh.alt.pure": "Un Pure Slime bleu",
   "gh.alt.parasite": "Un slime parasite violet",
-  "gh.ch.source": "* Présentation des personnages tirée du site officiel de Garden Hunt.",
   "mh.chars": "Personnages",
   "gh.ch.meina.role": "Héroïne / jeune Slugnail",
   "gh.ch.meina.name": "Meina",
