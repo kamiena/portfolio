@@ -688,7 +688,7 @@
   "hist.less": "Weniger anzeigen",
   "tv.3.alt": "NHK-Sendung Shutoken Network: Maskottchen Shutoken-kun und CÔGEIMU 01 Yuki",
   "cgy.alt.nhk": "Erinnerungsfoto mit einer Person aus der Sendung und Shutoken-kun von NHK Shutoken Network neben 01 Yuki",
-  "a.photo.badge": "24 Fotos",
+  "a.photo.badge": "25 Fotos",
   "a.photo.t": "Photo Art",
   "a.photo.d": "Ein Fotografie-Hobby: Ich gestalte und bearbeite meine Fotos zu fertigen Einzelbildern – als Übung für Bildgestaltung und Komposition und um meine Ausdrucksmöglichkeiten zu erweitern.",
   "a.photo.more": "Fotos ansehen",
@@ -721,5 +721,6 @@
   "photo.alt.img-2731": "Mond und kahler Baum am Winterhimmel",
   "photo.alt.img-2076": "Ein verschneites Lebkuchenhaus",
   "photo.alt.img-0010": "Die Sonne, die im Meer versinkt",
-  "photo.alt.img-0009": "Ein Jachthafen unter blauem Himmel"
+  "photo.alt.img-0009": "Ein Jachthafen unter blauem Himmel",
+  "photo.alt.sakura-night": "Nachts violett beleuchtete Kirschbäume und Menschen, die sie fotografieren"
 };

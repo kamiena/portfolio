@@ -688,7 +688,7 @@
   "hist.less": "收起",
   "tv.3.alt": "NHK《首都圈网络》的播出画面：吉祥物「首都犬」与《CÔGEIMU》01 Yuki",
   "cgy.alt.nhk": "NHK《首都圈网络》采访时，与出演者和首都犬在 01 Yuki 旁的合影",
-  "a.photo.badge": "24张",
+  "a.photo.badge": "25张",
   "a.photo.t": "摄影艺术",
   "a.photo.d": "作为爱好坚持的摄影活动。把拍下的照片进行设计和加工，完成为一张作品，同时练习画面营造与构图，拓宽表现的幅度。",
   "a.photo.more": "查看照片",
@@ -721,5 +721,6 @@
   "photo.alt.img-2731": "冬夜里的月亮与枯树",
   "photo.alt.img-2076": "覆盖着雪的糖果屋",
   "photo.alt.img-0010": "沉入大海的夕阳",
-  "photo.alt.img-0009": "蓝天下的游艇码头"
+  "photo.alt.img-0009": "蓝天下的游艇码头",
+  "photo.alt.sakura-night": "紫色灯光点亮的夜樱林荫道与拍照的人们"
 };

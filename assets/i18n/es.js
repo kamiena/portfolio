@@ -688,7 +688,7 @@
   "hist.less": "Ver menos",
   "tv.3.alt": "Emisión de Shutoken Network de NHK: la mascota Shutoken-kun y CÔGEIMU 01 Yuki",
   "cgy.alt.nhk": "Foto de recuerdo con una persona del programa y Shutoken-kun de NHK Shutoken Network junto a 01 Yuki",
-  "a.photo.badge": "24 fotos",
+  "a.photo.badge": "25 fotos",
   "a.photo.t": "Photo Art",
   "a.photo.d": "Una afición a la fotografía: diseño y edito mis fotos hasta convertirlas en imágenes acabadas, para practicar la creación de imágenes y la composición y ampliar mi expresión.",
   "a.photo.more": "Ver las fotos",
@@ -721,5 +721,6 @@
   "photo.alt.img-2731": "La luna y un árbol desnudo en el cielo de invierno",
   "photo.alt.img-2076": "Una casita de jengibre cubierta de nieve",
   "photo.alt.img-0010": "El sol poniéndose en el mar",
-  "photo.alt.img-0009": "Un puerto deportivo bajo el cielo azul"
+  "photo.alt.img-0009": "Un puerto deportivo bajo el cielo azul",
+  "photo.alt.sakura-night": "Cerezos iluminados de morado por la noche y gente haciéndoles fotos"
 };

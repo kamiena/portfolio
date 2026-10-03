@@ -688,7 +688,7 @@
   "hist.less": "Mostra meno",
   "tv.3.alt": "Trasmissione Shutoken Network della NHK: la mascotte Shutoken-kun e CÔGEIMU 01 Yuki",
   "cgy.alt.nhk": "Foto ricordo con una persona del programma e Shutoken-kun di NHK Shutoken Network accanto a 01 Yuki",
-  "a.photo.badge": "24 foto",
+  "a.photo.badge": "25 foto",
   "a.photo.t": "Photo Art",
   "a.photo.d": "Una passione per la fotografia: progetto e rielaboro le mie foto fino a farne immagini finite, per esercitarmi nella creazione di immagini e nella composizione e ampliare la mia espressione.",
   "a.photo.more": "Guarda le foto",
@@ -721,5 +721,6 @@
   "photo.alt.img-2731": "La luna e un albero spoglio nel cielo d'inverno",
   "photo.alt.img-2076": "Una casetta di pan di zenzero coperta di neve",
   "photo.alt.img-0010": "Il sole che tramonta nel mare",
-  "photo.alt.img-0009": "Un porticciolo sotto il cielo azzurro"
+  "photo.alt.img-0009": "Un porticciolo sotto il cielo azzurro",
+  "photo.alt.sakura-night": "Ciliegi illuminati di viola di notte e persone che li fotografano"
 };
