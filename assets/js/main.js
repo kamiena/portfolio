@@ -482,6 +482,71 @@
     if (m) openWork(m[1]);
   };
 
+  /* ---------- 日本語の改行を文節の切れ目に ----------
+     iPhone の Safari は「文節で改行する」CSS（word-break: auto-phrase）に対応していないので、
+     BudouX（budoux-ja.js）で文節の切れ目を求めて <wbr> を入れ、CSS の keep-all でそこだけで改行させる。 */
+  const JA_TEXT = /[\u3040-\u30ff\u3400-\u9fff]/;
+  const KEEP_TOGETHER = ['しゅと犬くん'];                // 名前など、途中で切りたくない言葉
+  const NO_SPACE_BREAK = ['404 Not Found', 'art bit #6', 'NEWVIEW AWARDS', 'SHIBUYA GAMES WEEK'];   // 空白で切りたくない英語の名前
+  const OPEN = '「『（【〈《', CLOSE = '」』）】〉》';
+  const NO_START = '、。，．！？!?・ー〜」』）】〉》ぁぃぅぇぉっゃゅょァィゥェォッャュョ';   // 行の頭に来てはいけない文字
+  const HIRA_OR_PUNCT = /[\u3041-\u309f\s、。，．！？!?・ー〜」』）】〉》]/;
+  const isKata = (ch) => /[\u30a1-\u30fa]/.test(ch);
+  const isKanji = (ch) => /[\u3400-\u9fff]/.test(ch);
+  const phraseCuts = (text) => {
+    const cuts = new Set(window.KE_BUDOUX.boundaries(text));
+    for (let i = 1; i < text.length; i++) {
+      // かぎかっこの前と、」のあと（「…」で／「…」を のような助詞は離さない）でも改行できるように
+      if (OPEN.includes(text[i]) && !OPEN.includes(text[i - 1])) cuts.add(i);
+      if (CLOSE.includes(text[i - 1]) && !HIRA_OR_PUNCT.test(text[i])) cuts.add(i);
+    }
+    // 長すぎる文節（10文字より長い）は、「・」「／」「×」のあと、カタカナと漢字の境目、「ゲーム」のあとでも切れるように
+    const marks = [0, ...[...cuts].sort((a, b) => a - b), text.length];
+    for (let k = 0; k < marks.length - 1; k++) {
+      if (marks[k + 1] - marks[k] <= 10) continue;
+      for (let i = marks[k] + 2; i < marks[k + 1] - 1; i++) {
+        const prev = text[i - 1], ch = text[i];
+        if ('・／×＆：'.includes(prev) || (isKata(prev) && isKanji(ch)) || (isKanji(prev) && isKata(ch)) ||
+            (text.slice(i - 3, i) === 'ゲーム' && isKata(ch))) cuts.add(i);
+      }
+    }
+    // BudouX は「として」を「と｜して」と分けてしまうので、そこは切らない
+    for (let at = text.indexOf('として'); at >= 0; at = text.indexOf('として', at + 1)) cuts.delete(at + 1);
+    KEEP_TOGETHER.forEach((word) => {
+      for (let at = text.indexOf(word); at >= 0; at = text.indexOf(word, at + 1)) {
+        for (let i = at + 1; i < at + word.length; i++) cuts.delete(i);
+      }
+    });
+    return [...cuts].filter((i) => !NO_START.includes(text[i]) && text[i] !== ' ' && text[i - 1] !== ' ').sort((a, b) => a - b);
+  };
+  const breakPhrases = (scope) => {
+    if (!window.KE_BUDOUX || currentLang !== 'ja' || !scope) return;
+    const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.nodeValue.length > 2 && JA_TEXT.test(n.nodeValue) && !n.parentElement.closest('script, style, svg, title, textarea'))
+        ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT,
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      let text = node.nodeValue;
+      NO_SPACE_BREAK.forEach((name) => { text = text.split(name).join(name.replace(/ /g, '\u00a0')); });
+      const cuts = phraseCuts(text);
+      if (!cuts.length) { if (text !== node.nodeValue) node.nodeValue = text; return; }
+      const frag = document.createDocumentFragment();
+      let start = 0;
+      cuts.forEach((i) => { frag.append(text.slice(start, i), document.createElement('wbr')); start = i; });
+      frag.append(text.slice(start));
+      node.replaceWith(frag);
+    });
+  };
+  let phrasedAll = false;
+  langHooks.push((code) => {
+    if (code !== 'ja') return;
+    if (!phrasedAll) { breakPhrases(document.body); phrasedAll = true; return; }
+    // 言語を切り替えて日本語に戻したときは、文章が入れ替わったところだけ
+    $$('[data-i18n], [data-i18n-html]').forEach(breakPhrases);
+  });
+
   /* ---------- 初期表示 ---------- */
   const initial = langInfo(window.KE_LANG) ? window.KE_LANG : 'ja';
   loadLang(initial).then(() => {
