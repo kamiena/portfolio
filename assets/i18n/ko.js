@@ -229,7 +229,7 @@
   "l.yt.d": "YouTube／라디오 ‘CREA CLAN Cafe’",
   "l.booth.t": "CREA CLAN BOOTH",
   "l.booth.d": "굿즈·게임 판매",
-  "l.gh.t": "『가든 헌트』 공식 사이트",
+  "l.gh.t": "『가든 헌트』 Steam 상점",
   "l.cg.t": "『PRJ CÔGEIMU』 공식 사이트",
   "footer.note": "게재된 게임 화면·일러스트·영상의 권리는 각 작품의 권리자에게 있습니다.",
 
@@ -510,7 +510,6 @@
   "gh.alt.meina": "Meina의 스탠딩 일러스트. 노란 코트를 입은 달팽이 소녀",
   "gh.alt.pure": "파란 Pure Slime",
   "gh.alt.parasite": "보라색 기생 슬라임",
-  "gh.ch.source": "※ 캐릭터 소개는 『가든 헌트』 공식 사이트에서 인용",
   "mh.chars": "캐릭터",
   "gh.ch.meina.role": "주인공 / 달팽이 소녀",
   "gh.ch.meina.name": "Meina",

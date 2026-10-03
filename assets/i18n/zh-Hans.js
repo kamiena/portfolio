@@ -229,7 +229,7 @@
   "l.yt.d": "YouTube／电台“CREA CLAN Cafe”",
   "l.booth.t": "CREA CLAN BOOTH",
   "l.booth.d": "周边・游戏销售",
-  "l.gh.t": "《花园狩猎》官方网站",
+  "l.gh.t": "《花园狩猎》Steam 商店页面",
   "l.cg.t": "《PRJ CÔGEIMU》官方网站",
   "footer.note": "本站所载游戏画面、插画及影像的权利归各作品权利人所有。",
 
@@ -510,7 +510,6 @@
   "gh.alt.meina": "Meina 的立绘：身穿黄色外套的滑蜗少女",
   "gh.alt.pure": "蓝色的 Pure Slime",
   "gh.alt.parasite": "紫色的寄生史莱姆",
-  "gh.ch.source": "※ 角色介绍摘自《花园狩猎》官方网站",
   "mh.chars": "角色",
   "gh.ch.meina.role": "主角／滑蜗少女",
   "gh.ch.meina.name": "Meina",
