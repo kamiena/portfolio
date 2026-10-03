@@ -613,5 +613,7 @@
   "fily.cap.1": "Immagine dello store",
   "fily.cap.2": "Immagine dello store",
   "fily.cap.3": "Schermata del titolo",
-  "fily.cap.4": "Come si gioca"
+  "fily.cap.4": "Come si gioca",
+  "bi.alt.kv": "Key visual di Biriri Switch: il logo colorato e Fily su un pavimento di mattoni",
+  "bi.alt.k": "Key visual di Biriri Switch"
 };

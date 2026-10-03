@@ -594,5 +594,7 @@
   "fily.cap.1": "商店宣傳圖",
   "fily.cap.2": "商店宣傳圖",
   "fily.cap.3": "標題畫面",
-  "fily.cap.4": "玩法說明"
+  "fily.cap.4": "玩法說明",
+  "bi.alt.kv": "《Biriri Switch》主視覺圖：繽紛的標誌和站在磚塊地面上的 Fily",
+  "bi.alt.k": "《Biriri Switch》主視覺圖"
 };

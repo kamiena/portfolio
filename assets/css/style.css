@@ -464,12 +464,8 @@ button { font: inherit; color: inherit; }
 .work-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 0.4s ease; }
 /* 画像の上下に余白ができるときは、画像の上端・下端の色で埋める（ちんあなご：上は海の青、下は砂） */
 .work-media--sea { background: linear-gradient(#5497ff 50%, #f0edde 50%); }
+.work-media--cream { background: #feebc4; }   /* ビリリスイッチ：背景のクリーム色 */
 .work-card:hover .work-media img { transform: scale(1.03); }
-/* 縦長のスマホ画面を3枚並べて見せる（ビリリスイッチ）。画像はそのまま、並べ方だけ CSS で */
-.work-media--phones { display: flex; justify-content: center; align-items: center; gap: 4%; padding: 5.5% 5%; }
-.work-media--phones img { width: 25%; height: auto; aspect-ratio: auto; object-fit: contain; background: var(--white); border: var(--bd-thin); border-radius: 12px; box-shadow: var(--shadow-sm); rotate: -5deg; translate: 0 3%; }
-.work-media--phones img:nth-child(2) { rotate: 2deg; translate: 0 -4%; }
-.work-media--phones img:nth-child(3) { rotate: 6deg; translate: 0 3%; }
 
 /* 年・バッジのシールは、キービジュアル（ロゴや顔）に重ならないよう画像の下に置く */
 .work-stickers { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 2px; }

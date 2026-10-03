@@ -613,5 +613,7 @@
   "fily.cap.1": "Imagen de la tienda",
   "fily.cap.2": "Imagen de la tienda",
   "fily.cap.3": "Pantalla de título",
-  "fily.cap.4": "Cómo jugar"
+  "fily.cap.4": "Cómo jugar",
+  "bi.alt.kv": "Imagen principal de Biriri Switch: el colorido logo y Fily sobre un suelo de ladrillos",
+  "bi.alt.k": "Imagen principal de Biriri Switch"
 };
