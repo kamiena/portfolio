@@ -442,6 +442,40 @@
     langHooks.push(syncAlt);
   });
 
+  /* ---------- フォトアート：写真を大きく見るビューア（← → キー・スワイプで前後へ） ---------- */
+  const viewer = $('#photo-viewer');
+  if (viewer && typeof viewer.showModal === 'function') {
+    const photos = $$('.photo-item');
+    const vImg = $('.lb-img', viewer);
+    const vCount = $('.lb-count', viewer);
+    let at = 0;
+    const show = (i) => {
+      at = (i + photos.length) % photos.length;
+      vImg.src = photos[at].dataset.full;
+      vImg.alt = $('img', photos[at])?.alt || '';
+      vCount.textContent = `${at + 1} / ${photos.length}`;
+      new Image().src = photos[(at + 1) % photos.length].dataset.full;   // 次の写真を先に読み込んでおく
+    };
+    photos.forEach((btn, i) => btn.addEventListener('click', () => { show(i); viewer.showModal(); }));
+    $('.lb-prev', viewer).addEventListener('click', () => show(at - 1));
+    $('.lb-next', viewer).addEventListener('click', () => show(at + 1));
+    $('.lb-close', viewer).addEventListener('click', () => viewer.close());
+    viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });   // 写真の外を押すと閉じる
+    viewer.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(at - 1);
+      if (e.key === 'ArrowRight') show(at + 1);
+    });
+    let startX = null;
+    viewer.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    viewer.addEventListener('touchend', (e) => {
+      if (startX == null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      startX = null;
+      if (Math.abs(dx) > 50) show(at + (dx < 0 ? 1 : -1));
+    });
+    viewer.addEventListener('close', () => photos[at]?.focus());
+  }
+
   // URL の #work-xxx から直接開けるように
   const openFromHash = () => {
     const m = location.hash.match(/^#work-([\w-]+)$/);
