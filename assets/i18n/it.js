@@ -668,5 +668,14 @@
   "tv.1.q": "Mi ha reso davvero felice vedere che si sono divertiti così tanto, entusiasti che un gioco da 500 yen potesse essere così appassionante.",
   "stats.dlMore": "+",
   "stats.subsMore": "+",
-  "stats.eventsMore": "+"
+  "stats.eventsMore": "+",
+  "o.gamezensen": "Gaming Frontline",
+  "o.raspberly": "Il blog di Raspberly",
+  "p.gh.11": "[Analisi completa] Recensione di Garden Hunt: “un gioco alla Pac-Man” (con immagini riassuntive)",
+  "p.gh.12": "[Tokyo Game Dungeon 12] Reportage dall'evento",
+  "p.gh.13": "[Reportage] Tokyo Game Dungeon 10",
+  "p.cg.11": "art bit #6: Game Playing Society",
+  "p.cg.12": "La mostra di arte contemporanea × giochi indie “art bit #6: Game Playing Society”",
+  "p.cg.13": "Il “gioco” era una tecnica per rifare il mondo: le altre possibilità che ci pongono videogiochi e arte contemporanea | reportage dalla mostra art bit #6",
+  "p.in.4": "[Al via il voto del pubblico!] Tutti e sei i progetti realizzati con STYLY in gara agli AUGGIE AWARDS 2025 di AWE, la più grande conferenza XR al mondo"
 };

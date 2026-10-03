@@ -649,5 +649,14 @@
   "tv.1.q": "大家玩得非常盡興，還為「只要500日圓就能玩得這麼熱血」而驚喜，讓我非常開心。",
   "stats.dlMore": "+",
   "stats.subsMore": "+",
-  "stats.eventsMore": "+"
+  "stats.eventsMore": "+",
+  "o.gamezensen": "Gaming Frontline",
+  "o.raspberly": "Raspberly的部落格",
+  "p.gh.11": "【深度解析】《花園狩獵》評測「類吃豆人遊戲」（附總結圖）",
+  "p.gh.12": "【東京遊戲地下城12】活動報導",
+  "p.gh.13": "【活動報導】：東京遊戲地下城10",
+  "p.cg.11": "art bit #6：Game Playing Society",
+  "p.cg.12": "現代藝術×獨立遊戲展覽「art bit #6：Game Playing Society」舉辦通知",
+  "p.cg.13": "「遊玩」曾是改造世界的技術。遊戲與現代藝術提出的另一種可能｜art bit #6 展覽報導",
+  "p.in.4": "【公眾投票開始！】使用 STYLY 的全部6個專案參選全球最大 XR 大會 AWE 的「AUGGIE AWARDS 2025」"
 };

@@ -668,5 +668,14 @@
   "tv.1.q": "It made me really happy that they truly enjoyed it, and were delighted that a ¥500 game could be this thrilling.",
   "stats.dlMore": "+",
   "stats.subsMore": "+",
-  "stats.eventsMore": "+"
+  "stats.eventsMore": "+",
+  "o.gamezensen": "Gaming Frontline",
+  "o.raspberly": "Raspberly's Blog",
+  "p.gh.11": "[In-depth] Garden Hunt review: “a Pac-Man-like game” (with summary images)",
+  "p.gh.12": "[Tokyo Game Dungeon 12] Event report",
+  "p.gh.13": "[Event report] Tokyo Game Dungeon 10",
+  "p.cg.11": "art bit #6: Game Playing Society",
+  "p.cg.12": "About “art bit #6: Game Playing Society”, an exhibition of contemporary art × indie games",
+  "p.cg.13": "“Play” was a technique for remaking the world: other possibilities that games and contemporary art put before us | art bit #6 exhibition report",
+  "p.in.4": "[Public voting now open!] All six projects made with STYLY enter the AUGGIE AWARDS 2025 at AWE, the world's largest XR conference"
 };
