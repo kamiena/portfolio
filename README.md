@@ -71,6 +71,13 @@ python3 -m http.server 8000
   - PRJ CÔGEIMU は「01 Yuki」「02 Kagane」の2作品に分けています。以前の `#work-cogeimu` は 01 Yuki が開きます。
 - **作品カード**は、画像・タイトル・文章など、どこを押しても詳細が開きます。
 
+## 日本語の改行（スマホで変な位置で改行しないように）
+
+- iPhone の Safari は「文節で改行する」CSS に対応していないため、`assets/js/budoux-ja.js`（Google の BudouX の日本語モデル）で
+  文節の切れ目を求め、`main.js` がそこに `<wbr>` を入れています。CSS（`word-break: keep-all`）で、その位置でだけ改行します。
+- 見出しや短いタイトルは行の長さをそろえ（`text-wrap: balance`）、1〜2文字だけが次の行に落ちないようにしています。
+- 途中で切りたくない名前は `main.js` の `KEEP_TOGETHER`（日本語）・`NO_SPACE_BREAK`（「404 Not Found」など英語の名前）に足せます。
+
 ## これまでのあゆみ（HISTORY）
 
 - 各できごとの `<li class="tl-item">` には分類 `data-cat` を付けています：
