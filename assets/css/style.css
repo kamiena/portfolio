@@ -363,7 +363,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- stats ---------- */
 .stats { position: relative; z-index: 2; margin-top: -84px; }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; list-style: none; padding: 0; margin: 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; list-style: none; padding: 0; margin: 0; }
 .stat {
   padding: 16px 14px 14px;
   background: var(--c);
@@ -372,13 +372,15 @@ button { font: inherit; color: inherit; }
   text-align: center;
   rotate: var(--r, 0deg);
 }
-.stat-num { display: block; font-family: var(--font-brand); font-size: clamp(28px, 4vw, 44px); line-height: 1.15; }
+.stat-num { display: block; font-family: var(--font-brand); font-size: clamp(26px, 3.4vw, 44px); line-height: 1.15; white-space: nowrap; }
 .stat-num small { font-size: 0.5em; margin-left: 2px; }
 .stat-label { display: block; font-weight: 900; font-size: 14px; line-height: 1.5; }
 @media (max-width: 760px) {
   .stats { margin-top: -64px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 }
+/* スマホでは、ダウンロード数（6桁）の2つは1段ずつ使う */
+@media (max-width: 540px) { .stat--wide { grid-column: 1 / -1; } }
 
 /* ---------- marquee ---------- */
 .marquee-wrap { overflow: hidden; padding: 44px 0 36px; }
@@ -418,6 +420,8 @@ button { font: inherit; color: inherit; }
     var(--o) calc(var(--o) * -1) 0 var(--ink), calc(var(--o) * -1) var(--o) 0 var(--ink),
     7px 7px 0 var(--ink);
 }
+/* 幅の狭いスマホでは見出しも少し小さく（ACTIVITY などがはみ出さないように） */
+@media (max-width: 430px) { .sec-title { font-size: min(52px, 12.4vw); } }
 .sec-sub {
   display: inline-flex; align-items: center; gap: 6px;
   margin: 0 0 10px;
@@ -465,6 +469,9 @@ button { font: inherit; color: inherit; }
 /* 画像の上下に余白ができるときは、画像の上端・下端の色で埋める（ちんあなご：上は海の青、下は砂） */
 .work-media--sea { background: linear-gradient(#5497ff 50%, #f0edde 50%); }
 .work-media--cream { background: #feebc4; }   /* ビリリスイッチ：背景のクリーム色 */
+/* 正方形に近い画像は切らずに全体を表示し、左右は画像の背景と同じ色で埋める（02 Kagane） */
+.work-media--dark { background: #202020; }
+.work-media--dark img { object-fit: contain; }
 .work-card:hover .work-media img { transform: scale(1.03); }
 
 /* 年・バッジのシールは、キービジュアル（ロゴや顔）に重ならないよう画像の下に置く */
@@ -495,7 +502,7 @@ button { font: inherit; color: inherit; }
 .work-catch { margin: 0; font-weight: 700; }
 .work-card .chip { font-size: 12px; padding: 1px 10px; background: var(--white); }
 .work-open { align-self: flex-start; margin-top: auto; }
-.work-open::after { content: ""; position: absolute; inset: 0; }
+.work-card:has(.work-open) { cursor: pointer; }
 
 .work-card.is-featured { grid-column: 1 / -1; flex-direction: row; }
 .work-card.is-featured .work-media { flex: 1.35; display: flex; align-items: center; border-bottom: 0; border-right: var(--bd); }
@@ -698,6 +705,18 @@ button { font: inherit; color: inherit; }
 @media (max-width: 560px) { .wm-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
 @media (max-width: 400px) { .wm-light { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 12px; } }
 
+/* 同じシリーズのもう1作へのリンク（PRJ CÔGEIMU） */
+.wm-next { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 18px; align-items: center; width: 100%; padding: 12px 20px 12px 12px; background: var(--c); border: var(--bd); border-radius: 18px; box-shadow: var(--shadow-sm); font: inherit; color: inherit; text-align: left; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.wm-next:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.wm-next:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.wm-next img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: var(--bd-thin); border-radius: 12px; background: #202020; }
+.wm-next-body { display: grid; gap: 2px; min-width: 0; }
+.wm-next-body small { font-weight: 900; font-size: 12px; letter-spacing: 0.08em; opacity: 0.75; }
+.wm-next-body b { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 26px; line-height: 1.2; }
+.wm-next-body span { font-weight: 800; font-size: 14px; }
+.wm-next > .icon { font-size: 22px; }
+@media (max-width: 560px) { .wm-next { grid-template-columns: 96px minmax(0, 1fr) auto; gap: 12px; } .wm-next-body b { font-size: 21px; } }
+
 /* ちんあなご：はじまりの思い出（写真＋文章） */
 .wm-origin { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 22px; align-items: center; }
 .wm-origin-photo { margin: 0; }
@@ -707,34 +726,6 @@ button { font: inherit; color: inherit; }
 .wm-origin-text p { font-size: 15px; line-height: 1.85; }
 @media (max-width: 820px) { .wm-origin { grid-template-columns: minmax(0, 1fr); } }
 
-/* CÔGEIMU の作品カード */
-.wm-works { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.wm-work {
-  display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: start;
-  padding: 14px;
-  background: var(--accent-soft);
-  border: var(--bd); border-radius: 18px;
-  box-shadow: var(--shadow-sm);
-}
-.wm-work-img { background: var(--ink); border: var(--bd-thin); border-radius: 12px; overflow: hidden; }
-.wm-work-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: contain; }
-.wm-work-no { margin: 0; font-family: var(--font-brand); font-size: 12px; letter-spacing: 0.08em; opacity: 0.75; }
-.wm-work h4 { margin: 2px 0 6px; font-family: var(--font-brand); font-weight: 400; font-size: 24px; line-height: 1.2; }
-.wm-work h4 small { display: block; margin-top: 2px; font-family: var(--font-body); font-weight: 800; font-size: 12px; letter-spacing: 0.06em; opacity: 0.7; }
-.wm-work .wm-work-body p { margin: 0 0 6px; font-weight: 600; font-size: 14px; line-height: 1.7; }
-.wm-work .wm-work-meta { font-weight: 800; font-size: 12px; opacity: 0.8; }
-.wm-work .wm-work-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; }
-.wm-work-links a {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 4px 12px;
-  background: var(--white);
-  border: 2px solid var(--ink); border-radius: 999px;
-  box-shadow: 2px 2px 0 var(--ink);
-  font-weight: 900; font-size: 13px; text-decoration: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.wm-work-links a:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
-.wm-work-links .icon { width: 0.9em; height: 0.9em; }
 
 .yt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
 .yt-item { margin: 0; }
@@ -784,10 +775,8 @@ html:lang(ja) .press-note { display: none; }
   .wm-head { padding-right: 0; }
   .wm-top { padding-top: 66px; }
   .press { grid-template-columns: 1fr; }
-  .wm-works { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 480px) {
-  .wm-work { grid-template-columns: 110px minmax(0, 1fr); gap: 12px; }
   .wm-steps li { grid-template-columns: 1fr; gap: 2px; }
   .wm-steps time { justify-self: start; }
 }
@@ -856,6 +845,9 @@ html:lang(ja) .press-note { display: none; }
 .about-text strong { background: linear-gradient(transparent 58%, var(--yellow) 58%); font-weight: 900; }
 .about-hello { margin: 0 0 14px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(26px, 3.6vw, 38px); line-height: 1.35; }
 .about-hello span { color: var(--pink); }
+/* 日本語は Dela Gothic One だと太すぎて漢字がつぶれるので、丸ゴシックの極太＋影で目立たせる */
+html:lang(ja) .about-hello { font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900; font-size: clamp(19px, 5.4vw, 40px); letter-spacing: 0.02em; }
+html:lang(ja) .about-hello span { display: inline-block; margin-top: 2px; font-size: 1.22em; text-shadow: 3px 3px 0 var(--ink); }
 
 .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; list-style: none; padding: 0; margin: 30px 0 0; }
 .skill {
@@ -999,6 +991,13 @@ a.act-card:hover { transform: translate(-3px, -3px) rotate(0.4deg); box-shadow: 
 .act-visual--pattern { display: grid; place-items: center; background-image: radial-gradient(rgba(255, 255, 255, 0.45) 3px, transparent 3.5px); background-size: 20px 20px; }
 .act-mark { font-family: var(--font-brand); font-size: clamp(38px, 5vw, 56px); line-height: 1.1; color: var(--white); text-align: center; text-shadow: 3px 0 0 var(--ink), -3px 0 0 var(--ink), 0 3px 0 var(--ink), 0 -3px 0 var(--ink), 3px 3px 0 var(--ink), -3px -3px 0 var(--ink), 3px -3px 0 var(--ink), -3px 3px 0 var(--ink), 6px 6px 0 var(--ink); }
 .act-mark small { display: block; font-size: 0.34em; letter-spacing: 0.12em; }
+.act-badge { position: absolute; z-index: 2; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: var(--yellow); border: var(--bd-thin); border-radius: 999px; box-shadow: 3px 3px 0 var(--ink); font-weight: 900; font-size: 14px; line-height: 1.4; rotate: -4deg; }
+.act-badge .icon { color: var(--orange); font-size: 1.15em; }
+/* 旅行記：3つの旅行の写真を並べる（並べ方だけ CSS で） */
+.act-visual--trip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); place-items: stretch; }
+.act-visual--trip img { width: 100%; height: 100%; object-fit: cover; border-right: var(--bd-thin); }
+.act-visual--trip img:last-of-type { border-right: 0; }
+.act-visual--trip .act-mark { position: absolute; inset: 0; display: grid; place-content: center; background: rgba(29, 32, 69, 0.18); }
 .act-body { display: flex; flex-direction: column; gap: 6px; flex: 1; padding: 18px 20px 20px; }
 .act-kicker { margin: 0; font-family: var(--font-brand); font-size: 13px; letter-spacing: 0.1em; color: var(--blue); }
 .act-title { margin: 0; font-weight: 900; font-size: 19px; line-height: 1.45; }
@@ -1026,6 +1025,11 @@ a.act-card:hover { transform: translate(-3px, -3px) rotate(0.4deg); box-shadow: 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .tv-card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); }
+@media (min-width: 821px) {
+  .tv-card--feature { grid-column: span 2; grid-row: span 2; }
+  .tv-card--feature .tv-title { font-size: 20px; }
+  .tv-card--feature .tv-text { font-size: 15px; }
+}
 .tv-thumb { position: relative; aspect-ratio: 16 / 9; background: var(--ink); border-bottom: var(--bd); overflow: hidden; }
 .tv-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .tv-thumb--pattern { display: grid; place-items: center; background-color: var(--sky); background-image: radial-gradient(rgba(255, 255, 255, 0.45) 3px, transparent 3.5px); background-size: 20px 20px; }
@@ -1157,3 +1161,38 @@ a.act-card:hover { transform: translate(-3px, -3px) rotate(0.4deg); box-shadow: 
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* マウスのあとを追いかけるキラキラ（main.js が描く） */
+.sparkle-layer { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; }
+
+/* ---------- 旅行記（X の「#ゲームクリエイターの〇〇旅行」をまとめた詳細ウィンドウ） ---------- */
+.trip-head { display: flex; flex-direction: column; gap: 10px; padding: 28px 64px 22px 28px; background: var(--accent-soft); border-bottom: var(--bd); }
+.trip-lead { margin: 0; font-weight: 700; line-height: 1.8; }
+.trip-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.trip-jump { background: var(--c); font: inherit; font-weight: 900; font-size: 13px; cursor: pointer; }
+.trip-jump:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+.trip-body { display: grid; gap: 34px; padding: 28px; }
+.trip { scroll-margin-top: 12px; }
+.trip-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: -2px 0 14px; font-weight: 800; font-size: 13px; }
+.trip-meta time { padding: 0 10px; background: var(--c); border: 2px solid var(--ink); border-radius: 8px; font-family: var(--font-brand); font-size: 12px; }
+.trip-meta a { color: inherit; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.trip-posts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+.trip-post a { display: flex; flex-direction: column; height: 100%; background: var(--white); border: var(--bd-thin); border-radius: 16px; box-shadow: var(--shadow-sm); overflow: hidden; color: inherit; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.trip-post a:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.trip-post a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.trip-photo { position: relative; display: block; aspect-ratio: 4 / 3; background: var(--c); border-bottom: var(--bd-thin); overflow: hidden; }
+.trip-photo img { width: 100%; height: 100%; object-fit: cover; }
+.trip-count { position: absolute; right: 8px; bottom: 8px; padding: 0 8px; background: rgba(29, 32, 69, 0.82); color: var(--white); border-radius: 999px; font-weight: 900; font-size: 12px; line-height: 1.7; }
+.trip-play { position: absolute; inset: 0; display: grid; place-items: center; }
+.trip-play .icon { width: 44px; height: 44px; padding: 11px; background: rgba(29, 32, 69, 0.72); color: var(--white); border-radius: 50%; }
+.trip-text { display: grid; gap: 4px; padding: 10px 12px 2px; font-weight: 600; font-size: 13px; line-height: 1.7; }
+.trip-text time { font-family: var(--font-brand); font-size: 12px; }
+.trip-text > span { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.trip-more { display: flex; align-items: center; gap: 4px; margin-top: auto; padding: 6px 12px 10px; font-weight: 900; font-size: 12px; }
+.trip-more .icon { width: 0.9em; height: 0.9em; }
+@media (max-width: 820px) {
+  .trip-head { padding: 66px 18px 18px; }
+  .trip-body { padding: 18px; gap: 28px; }
+  .trip-posts { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+}
+

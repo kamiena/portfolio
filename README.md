@@ -67,7 +67,9 @@ python3 -m http.server 8000
 - **画像を差し替える**：`assets/img/works/<作品>/` に同じファイル名で上書き（横長 16:9、幅 1280px 程度がおすすめ）。
   画像は切り抜かずに全体を表示し、余白はぼかした同じ画像で埋める作りなので、縦長・正方形の画像でも文字やロゴは切れません。
 - **作品詳細への直リンク**：URL 末尾に `#work-作品名` を付けると、その作品の詳細が開いた状態で表示されます
-  （`#work-garden-hunt` / `#work-traps` / `#work-cogeimu` / `#work-immersive-novel` / `#work-crea-chan` / `#work-bunmawashi` / `#work-biriri` / `#work-chinanago`）
+  （`#work-garden-hunt` / `#work-traps` / `#work-kagane` / `#work-yuki` / `#work-immersive-novel` / `#work-crea-chan` / `#work-bunmawashi` / `#work-biriri` / `#work-chinanago`、旅行記は `#work-trip`）
+  - PRJ CÔGEIMU は「01 Yuki」「02 Kagane」の2作品に分けています。以前の `#work-cogeimu` は 01 Yuki が開きます。
+- **作品カード**は、画像・タイトル・文章など、どこを押しても詳細が開きます。
 
 ## 画像の扱い（大事なルール）
 
@@ -76,6 +78,20 @@ python3 -m http.server 8000
   → 必要なときはカミエナさんにお願いして用意してもらいます
 - 縦長や正方形の画像は、枠に合わせて切らずに全体を表示し、余白は同じ画像をぼかした背景で埋めています（ぼかしは CSS で表示しているだけで、画像ファイルは元のままです）。
 - SNS シェア用の `ogp.jpg` は、サイトのデザインを画像にしたものです（アイコンや作品画像を配置）。
+
+## 旅行記（X の「#ゲームクリエイターの〇〇旅行」まとめ）
+
+ACTIVITY の「TRIP」を押すと、旅行ごとに X のポストを並べたページ（詳細ウィンドウ）が開きます。
+X には「特定のハッシュタグのポストだけを並べてサイトに埋め込む」公式の機能がないため（ハッシュタグ検索のページはログインが必要）、
+ポストを集めて、写真・本文の冒頭・元のポストへのリンクをサイトの中に並べる形にしています。
+
+- **新しいポストを反映する**：リポジトリのフォルダで次のコマンドを実行すると、写真と一覧が最新になります。
+  ```sh
+  pip install pillow
+  python3 tools/update_trips.py
+  ```
+- **新しい旅行を足す**：`tools/update_trips.py` の `TRIPS` に1行追加し、`assets/i18n/*.js` に旅行名のキー（例：`"trip.korea": "Korea"`）を足して、上のコマンドを実行。
+- ポストの取得には非公式 API（FxTwitter）を使っているので、使えなくなったときは Claude に頼むか、X のデータアーカイブ（下記）を渡してください。
 
 ## X（旧Twitter）のポストからニュースを拾うには
 

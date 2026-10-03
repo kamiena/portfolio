@@ -292,17 +292,41 @@
   };
 
   /* ---------- 作品詳細モーダル ---------- */
+  const WORK_ALIASES = { cogeimu: 'yuki' };   // 2作品に分ける前の #work-cogeimu も開けるように
   const openWork = (id) => {
-    const dialog = document.getElementById(`work-${id}`);
+    const dialog = document.getElementById(`work-${WORK_ALIASES[id] || id}`);
     if (!dialog || typeof dialog.showModal !== 'function') return;
+    // 詳細の中から別の作品へ移るときは、開いている詳細を閉じてから
+    $$('.work-modal[open]').forEach((d) => { if (d !== dialog) d.close(); });
     if (!dialog.open) dialog.showModal();
     const scroller = $('.wm-scroll', dialog);
     if (scroller) scroller.scrollTop = 0;
-    history.replaceState(null, '', `${location.pathname}${location.search}#work-${id}`);
+    history.replaceState(null, '', `${location.pathname}${location.search}#${dialog.id}`);
   };
 
   $$('[data-open-work]').forEach((btn) => {
-    btn.addEventListener('click', () => openWork(btn.dataset.openWork));
+    btn.addEventListener('click', (e) => {
+      if (btn.tagName === 'A') e.preventDefault();   // 旅行記カードなど、リンクの形のものもページ移動せずに開く
+      openWork(btn.dataset.openWork);
+    });
+  });
+
+  // 旅行記：上のボタンで、その旅行の見出しまでスクロール
+  $$('[data-jump]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.getElementById(btn.dataset.jump)?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
+  // 作品カードは、画像・タイトル・文章など、どこを押しても詳細が開く
+  $$('.work-card').forEach((card) => {
+    const btn = $('.work-open[data-open-work]', card);
+    if (!btn) return;
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button')) return;               // カード内のボタン・リンクはそのまま
+      if (String(window.getSelection?.() || '').length) return; // 文字を選択しているときは開かない
+      openWork(btn.dataset.openWork);
+    });
   });
 
   $$('.work-modal').forEach((dialog) => {
@@ -349,4 +373,69 @@
     openFromHash();
   });
   window.addEventListener('hashchange', openFromHash);
+
+  /* ---------- マウスのあとを追いかけるキラキラ（マウス操作のときだけ） ---------- */
+  if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const COLORS = ['#ffd84d', '#ff8fc8', '#7fd3ff', '#b6f05a', '#ffb347', '#c9b6ff'];
+    const layer = document.createElement('canvas');
+    layer.className = 'sparkle-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(layer);
+    const ctx = layer.getContext('2d');
+    let dpr = 1, raf = 0, lastX = null, lastY = null;
+    const parts = [];
+    const resize = () => {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      layer.width = innerWidth * dpr; layer.height = innerHeight * dpr;
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    // ✦ の形（4つの角を内側にカーブさせた星）
+    const sparkle = (r) => {
+      ctx.beginPath();
+      ctx.moveTo(0, -r);
+      ctx.quadraticCurveTo(0, 0, r, 0); ctx.quadraticCurveTo(0, 0, 0, r);
+      ctx.quadraticCurveTo(0, 0, -r, 0); ctx.quadraticCurveTo(0, 0, 0, -r);
+      ctx.closePath();
+    };
+    const tick = () => {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, layer.width, layer.height);
+      for (let i = parts.length - 1; i >= 0; i--) {
+        const p = parts[i];
+        p.x += p.vx; p.y += p.vy; p.vy += 0.03; p.rot += p.vr; p.life -= p.decay;
+        if (p.life <= 0) { parts.splice(i, 1); continue; }
+        const r = p.r * (0.4 + 0.6 * p.life);
+        ctx.setTransform(dpr, 0, 0, dpr, p.x * dpr, p.y * dpr);
+        ctx.rotate(p.rot);
+        ctx.globalAlpha = Math.min(1, p.life * 1.4);
+        ctx.fillStyle = p.c;
+        if (p.dot) { ctx.beginPath(); ctx.arc(0, 0, r * 0.45, 0, Math.PI * 2); ctx.fill(); continue; }
+        sparkle(r); ctx.fill();
+        ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(29, 32, 69, 0.55)'; ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      raf = parts.length ? requestAnimationFrame(tick) : 0;
+    };
+    window.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      // 詳細ウィンドウ（最前面に出る）を開いているときは、その中に重ねる
+      const host = document.querySelector('dialog[open]') || document.body;
+      if (layer.parentNode !== host) host.appendChild(layer);
+      if (lastX !== null && Math.hypot(e.clientX - lastX, e.clientY - lastY) < 14) return;
+      lastX = e.clientX; lastY = e.clientY;
+      const n = 1 + (Math.random() < 0.5);
+      for (let i = 0; i < n; i++) {
+        parts.push({
+          x: e.clientX + (Math.random() - 0.5) * 14, y: e.clientY + (Math.random() - 0.5) * 14,
+          vx: (Math.random() - 0.5) * 1.2, vy: Math.random() * 0.4 - 0.6,
+          r: 6 + Math.random() * 8, rot: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.15,
+          life: 1, decay: 0.018 + Math.random() * 0.018,
+          c: COLORS[(Math.random() * COLORS.length) | 0], dot: Math.random() < 0.3,
+        });
+      }
+      if (parts.length > 140) parts.splice(0, parts.length - 140);
+      if (!raf) raf = requestAnimationFrame(tick);
+    }, { passive: true });
+  }
 })();
