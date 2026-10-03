@@ -1358,3 +1358,34 @@ a.act-card:hover .act-more .icon { translate: 6px 0; }
 }
 /* WEB 記事のチップは真ん中にそろえる（左に寄って右側が空かないように） */
 .media-cloud { justify-content: center; }
+/* 写真のないポスト（旅行に出る前のお知らせなど）は文章だけ */
+@media (max-width: 600px) { .trip-post a:not(:has(.trip-photo)) { grid-template-columns: minmax(0, 1fr); } }
+.trip-post a:not(:has(.trip-photo)) .trip-text { padding-top: 14px; }
+
+/* ---------- グッズ制作（作ってきたグッズの一覧） ---------- */
+.goods-body { padding: 28px; }
+.goods-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+.goods-item { display: flex; flex-direction: column; background: var(--white); border: var(--bd-thin); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; transition: translate 0.3s var(--spring), rotate 0.3s var(--spring), box-shadow 0.25s ease; }
+.goods-item:hover { translate: -3px -4px; rotate: -0.6deg; box-shadow: 7px 8px 0 var(--ink); }
+.goods-photo { display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 10px; background-color: var(--accent-soft); background-image: radial-gradient(rgba(255, 255, 255, 0.75) 3px, transparent 3.5px); background-size: 18px 18px; border-bottom: var(--bd-thin); overflow: hidden; }
+.goods-photo img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px; transition: scale 0.4s cubic-bezier(0.2, 0.9, 0.3, 1); }
+.goods-item:hover .goods-photo img { scale: 1.06; }
+.goods-text { display: flex; flex-direction: column; gap: 6px; flex: 1; padding: 12px 14px 14px; }
+.goods-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; }
+.goods-year { padding: 0 8px; background: var(--ink); color: var(--yellow); border-radius: 8px; font-family: var(--font-brand); font-size: 12px; line-height: 1.7; }
+.goods-tag { padding: 0 8px; border: 2px solid var(--ink); border-radius: 999px; font-weight: 900; font-size: 11.5px; line-height: 1.6; background: var(--white); }
+.goods-tag--booth { background: var(--yellow); }
+.goods-tag--soon { background: var(--pink); color: var(--white); }
+.goods-name { margin: 0; font-weight: 900; font-size: 16px; line-height: 1.5; text-wrap: balance; }
+.goods-desc { margin: 0; font-weight: 500; font-size: 13.5px; line-height: 1.75; }
+.goods-link { display: inline-flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 4px; color: var(--pink); font-weight: 900; font-size: 13px; text-decoration: none; }
+.goods-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.goods-shop { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 20px; margin-top: 28px; padding: 20px; background: var(--yellow-soft); border: var(--bd); border-radius: 20px; text-align: center; }
+.goods-shop-text { margin: 0; font-weight: 900; font-size: 15px; line-height: 1.6; }
+@media (max-width: 600px) {
+  .goods-body { padding: 18px; }
+  .goods-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .goods-photo { aspect-ratio: 16 / 10; }   /* スマホは写真を大きく（上に写真、下に説明） */
+  .goods-name { font-size: 15px; }
+  .goods-desc { font-size: 13px; }
+}

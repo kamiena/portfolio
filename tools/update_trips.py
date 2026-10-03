@@ -7,6 +7,8 @@
 
 - ポストの取得には、ログイン不要の非公式 API（FxTwitter）を使います。仕様が変わると動かなくなることがあります。
 - 新しい旅行を足すときは、下の TRIPS に1行追加し、assets/i18n/*.js に旅行名のキー（例: "trip.korea"）を足してください。
+- ハッシュタグをつける前の旅（ハワイ、イギリス・イタリア）は、期間（since〜until）でポストを集めています。
+  旅と関係ないポストが混ざったら、SKIP にポストの ID を足してください（ほかの人へのリプライは自動で外します）。
 - index.html の <!-- trip-nav:start --> 〜 <!-- trip-nav:end --> と
   <!-- trip-posts:start --> 〜 <!-- trip-posts:end --> の間だけを書き換えます。
 """
@@ -17,13 +19,19 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 IMG_DIR = ROOT / 'assets/img/trip'
 ACCOUNT = 'KamiEna_Game'
-# （ハッシュタグ, 見出しのid, 翻訳キー, 日本語の旅行名, 色）… 新しい旅行ほど上に
+# 新しい旅行ほど上に。tag（ハッシュタグ）か、since/until（期間。until の日は含まない）でポストを集める
 TRIPS = [
-    ('ゲームクリエイターの台湾旅行', 'taiwan', 'trip.tw', '台湾', '--yellow'),
-    ('ゲームクリエイターのバリ島旅行', 'bali', 'trip.bali', 'バリ島', '--lime'),
-    ('ゲームクリエイターのエジプト旅行', 'egypt', 'trip.egypt', 'エジプト', '--orange'),
+    dict(key='taiwan', name_key='trip.tw', name='台湾', color='--yellow', tag='ゲームクリエイターの台湾旅行'),
+    dict(key='bali', name_key='trip.bali', name='バリ島', color='--lime', tag='ゲームクリエイターのバリ島旅行'),
+    dict(key='egypt', name_key='trip.egypt', name='エジプト', color='--orange', tag='ゲームクリエイターのエジプト旅行'),
+    dict(key='hawaii', name_key='trip.hawaii', name='ハワイ', color='--sky', since='2023-09-10', until='2023-09-18'),
+    dict(key='uk-italy', name_key='trip.ukit', name='イギリス・イタリア', color='--purple', since='2018-08-03', until='2018-08-29'),
 ]
-SKIP = {'1955126822632632418'}   # 旅行記ではないポスト（ハッシュタグの紹介だけのリプライなど）
+SKIP = {
+    '1955126822632632418',                          # ハッシュタグの紹介だけのリプライ
+    '1701171817124430295',                          # ハワイ：エディオン公式への返事
+    '1028622395311939586', '1028971876318466050',   # イギリス・イタリアの前：制作合宿
+}
 JST = datetime.timezone(datetime.timedelta(hours=9))
 
 def get_json(url):
@@ -50,6 +58,11 @@ def search(query):
         cursor = nxt; time.sleep(1)
     return list(found.values())
 
+def is_reply_to_others(p):
+    to = p.get('replying_to')
+    to = (to.get('screen_name') if isinstance(to, dict) else to) or ''
+    return p['text'].lstrip().startswith('@') or (to and to.lower() != ACCOUNT.lower())
+
 def clean(text):
     text = re.sub(r'#\S+', '', text)            # ハッシュタグは見出しに出すので本文からは外す
     text = re.sub(r'https?://\S+', '', text)
@@ -73,10 +86,12 @@ def save_image(media, post_id):
 def build():
     IMG_DIR.mkdir(parents=True, exist_ok=True)
     nav, sections = [], []
-    for tag, key, name_key, name, color in TRIPS:
-        posts = sorted((p for p in search(f'#{tag} from:{ACCOUNT}') if p['id'] not in SKIP), key=lambda p: p['created_timestamp'])
+    for trip in TRIPS:
+        key, name_key, name, color, tag = trip['key'], trip['name_key'], trip['name'], trip['color'], trip.get('tag')
+        query = f'#{tag} from:{ACCOUNT}' if tag else f'from:{ACCOUNT} since:{trip["since"]} until:{trip["until"]}'
+        posts = sorted((p for p in search(query) if p['id'] not in SKIP and not is_reply_to_others(p)), key=lambda p: p['created_timestamp'])
         if not posts:
-            print('no posts for', tag); continue
+            print('no posts for', key); continue
         days = [datetime.datetime.fromtimestamp(p['created_timestamp'], JST) for p in posts]
         items = []
         for p, day in zip(posts, days):
@@ -90,15 +105,16 @@ def build():
                     photo = f'<span class="trip-photo"><img src="assets/img/trip/{p["id"]}.webp" alt="" width="{size[0]}" height="{size[1]}" loading="lazy">{badge}</span>'
             text = html.escape(excerpt(clean(p['text']))).replace('\n', '<br>')
             items.append(f'              <li class="trip-post"><a href="{p["url"]}" target="_blank" rel="noopener">{photo}<span class="trip-text"><time datetime="{day:%Y-%m-%d}">{day:%Y.%m.%d}</time><span lang="ja">{text}</span></span><span class="trip-more"><span data-i18n="trip.viewOnX">X で見る</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>')
+        tag_link = f'<a href="https://x.com/hashtag/{urllib.parse.quote(tag)}?f=live" target="_blank" rel="noopener">#{tag}</a>' if tag else ''
         sections.append(f'''        <section class="trip" id="trip-{key}" style="--c:var({color})">
           <h3 class="wm-h"><svg class="bolt" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-bolt"/></svg><span data-i18n="{name_key}">{name}</span></h3>
-          <p class="trip-meta"><time>{days[0]:%Y.%m.%d}–{days[-1]:%m.%d}</time><span>{len(posts)} posts</span><a href="https://x.com/hashtag/{urllib.parse.quote(tag)}?f=live" target="_blank" rel="noopener">#{tag}</a></p>
+          <p class="trip-meta"><time>{days[0]:%Y.%m.%d}–{days[-1]:%m.%d}</time><span>{len(posts)} posts</span>{tag_link}</p>
           <ul class="trip-posts">
 {chr(10).join(items)}
           </ul>
         </section>''')
         nav.append(f'<button class="chip trip-jump" type="button" data-jump="trip-{key}" style="--c:var({color})"><span data-i18n="{name_key}">{name}</span> {days[0]:%Y}</button>')
-        print(f'{tag}: {len(posts)} posts')
+        print(f'{key}: {len(posts)} posts')
     return ''.join(nav), '\n\n'.join(sections)
 
 def replace_between(text, name, body):
