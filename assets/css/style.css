@@ -693,6 +693,13 @@ button { font: inherit; color: inherit; }
 .wm-light--black h4 { text-shadow: 0 0 10px rgba(120, 150, 255, 0.9); }
 .wm-light--black img { border-color: var(--white); }
 @media (max-width: 820px) { .wm-lights { grid-template-columns: minmax(0, 1fr); } }
+/* 縦長のスクリーンショットを並べる（fily） */
+.wm-block > p + .wm-shots { margin-top: 4px; }
+.wm-shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.wm-shots figure { margin: 0; }
+.wm-shots img { display: block; width: 100%; height: auto; border: var(--bd-thin); border-radius: 12px; box-shadow: var(--shadow-sm); }
+.wm-shots figcaption { margin-top: 8px; font-weight: 800; font-size: 12.5px; line-height: 1.5; text-align: center; }
+@media (max-width: 560px) { .wm-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
 @media (max-width: 400px) { .wm-light { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 12px; } }
 
 /* ちんあなご：はじまりの思い出（写真＋文章） */
