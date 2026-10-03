@@ -462,6 +462,8 @@ button { font: inherit; color: inherit; }
   border-bottom: var(--bd);
 }
 .work-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 0.4s ease; }
+/* 画像の上下に余白ができるときは、画像の上端・下端の色で埋める（ちんあなご：上は海の青、下は砂） */
+.work-media--sea { background: linear-gradient(#5497ff 50%, #f0edde 50%); }
 .work-card:hover .work-media img { transform: scale(1.03); }
 
 /* 年・バッジのシールは、キービジュアル（ロゴや顔）に重ならないよう画像の下に置く */
@@ -618,6 +620,15 @@ button { font: inherit; color: inherit; }
 .wm-steps time { padding: 0 8px; background: var(--accent); border: 2px solid var(--ink); border-radius: 8px; font-family: var(--font-brand); font-size: 12px; text-align: center; white-space: nowrap; }
 .wm-block:not(.wm-block--full) .wm-steps li { grid-template-columns: 1fr; gap: 2px; }
 .wm-block:not(.wm-block--full) .wm-steps time { justify-self: start; }
+
+/* ちんあなご：はじまりの思い出（写真＋文章） */
+.wm-origin { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 22px; align-items: center; }
+.wm-origin-photo { margin: 0; }
+.wm-origin-photo img { display: block; width: 100%; height: auto; border: var(--bd); border-radius: 16px; box-shadow: var(--shadow-sm); }
+.wm-origin-photo figcaption { margin-top: 8px; font-size: 12.5px; font-weight: 800; line-height: 1.6; opacity: 0.8; }
+.wm-origin-text { padding: 16px 20px; background: var(--accent-soft); border: var(--bd-thin); border-radius: 16px; }
+.wm-origin-text p { font-size: 15px; line-height: 1.85; }
+@media (max-width: 820px) { .wm-origin { grid-template-columns: minmax(0, 1fr); } }
 
 /* CÔGEIMU の作品カード */
 .wm-works { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
