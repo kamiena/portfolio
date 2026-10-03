@@ -198,6 +198,11 @@
   }
 
   /* ---------- メールアドレス（スパム対策で JS から組み立て） ---------- */
+  // プロフィールのちびキャラ：タップで表情を切り替える（ホバーできないスマホ向け）
+  document.querySelectorAll('[data-chibi]').forEach((el) => {
+    el.addEventListener('click', () => el.classList.toggle('is-on'));
+  });
+
   const MAIL = ['kamiena.game', 'gmail.com'].join('@');
   $$('[data-mail]').forEach((a) => { a.href = `mailto:${MAIL}`; });
 
