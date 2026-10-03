@@ -613,5 +613,7 @@
   "fily.cap.1": "App store image",
   "fily.cap.2": "App store image",
   "fily.cap.3": "Title screen",
-  "fily.cap.4": "How to play"
+  "fily.cap.4": "How to play",
+  "bi.alt.kv": "Biriri Switch key visual: the colorful logo and Fily on a brick floor",
+  "bi.alt.k": "Biriri Switch key visual"
 };

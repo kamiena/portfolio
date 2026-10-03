@@ -613,5 +613,7 @@
   "fily.cap.1": "Store-Bild",
   "fily.cap.2": "Store-Bild",
   "fily.cap.3": "Titelbildschirm",
-  "fily.cap.4": "Spielanleitung"
+  "fily.cap.4": "Spielanleitung",
+  "bi.alt.kv": "Key Visual von Biriri Switch: das bunte Logo und Fily auf einem Ziegelboden",
+  "bi.alt.k": "Key Visual von Biriri Switch"
 };

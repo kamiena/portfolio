@@ -613,5 +613,7 @@
   "fily.cap.1": "스토어 소개 이미지",
   "fily.cap.2": "스토어 소개 이미지",
   "fily.cap.3": "타이틀 화면",
-  "fily.cap.4": "플레이 방법"
+  "fily.cap.4": "플레이 방법",
+  "bi.alt.kv": "『Biriri Switch』 키 비주얼. 알록달록한 로고와 벽돌 바닥 위의 Fily",
+  "bi.alt.k": "『Biriri Switch』 키 비주얼"
 };
