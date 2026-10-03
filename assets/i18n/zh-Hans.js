@@ -540,7 +540,7 @@
   "m.tr.r1": "在自己的回合中，进行<strong>“移动”</strong>和<strong>“布置”</strong>两个步骤。",
   "m.tr.r2": "<strong>移动</strong>：看穿对手布下的陷阱，让 Kumachi 向上下左右移动1格，并执行脚下陷阱的效果。",
   "m.tr.r3": "<strong>布置</strong>：把 Kumachi 上下左右的陷阱翻开，双方确认后，在不让对手看到的情况下重新排列，再背面朝上放回。",
-  "m.tr.r4": "<strong>“铃铛”</strong>类陷阱让 Kumachi 前进，<strong>“蜂蜜”</strong>类陷阱让 Kumachi 后退。放在哪里，效果会大不相同。",
+  "m.tr.r4": "陷阱有让 Kumachi 前进的<strong>“铃铛”</strong>等，也有让 Kumachi 后退的<strong>“蜂蜜”</strong>等。放在哪里，效果会大不相同。",
   "m.tr.rnote": "※ 以上为企划阶段的规则。游戏仍在开发中，规则可能会有变动。",
   "m.tr.d1": "目标是做出<strong>平时不太玩游戏的人也能乐在其中的游戏</strong>。就像黑白棋和大富豪一样，随着玩家水平的提升，新的目标会层层显现。",
   "m.tr.lv1": "让 Kumachi 前进",
@@ -548,5 +548,18 @@
   "m.tr.lv3": "出其不意，反制对手",
   "m.tr.lv4": "预判后续局势来布置陷阱",
   "m.tr.lv5": "看透对手的熟练度与打法",
-  "m.tr.d2": "玩上一两局就能体会到核心乐趣，越玩越熟练，就越能看到下一个目标。这就是我想追求的深度。"
+  "m.tr.d2": "玩上一两局就能体会到核心乐趣，越玩越熟练，就越能看到下一个目标。这就是我想追求的深度。",
+  "about.mascots": "CREA CLAN 的看板娘",
+  "mascot.crea": "Crea",
+  "tr.ch.role": "Traps 的看板娘",
+  "tr.ch.name": "Kumachi",
+  "tr.ch.desc": "穿着小熊玩偶装、爱恶作剧的女孩，最爱吃蜂蜜。根据布下的陷阱，一会儿冲到这边，一会儿跑到那边，闹个不停！",
+  "tr.alt.kumachi": "Kumachi 的插画：穿着小熊玩偶装，举起双手扑过来的姿势",
+  "mh.cards": "陷阱卡",
+  "m.tr.cardsLead": "卡牌上的数字代表 Kumachi 前进（＋）或后退（−）的格数。哪张卡放在哪里，就是胜负的关键！",
+  "tr.card.1": "铃铛",
+  "tr.card.2": "蜂蜜",
+  "tr.card.3": "铜锣",
+  "tr.card.4": "天使铃铛",
+  "tr.card.5": "浓郁蜂蜜"
 };

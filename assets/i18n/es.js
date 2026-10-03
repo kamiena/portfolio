@@ -540,7 +540,7 @@
   "m.tr.r1": "En tu turno haces dos cosas: <strong>Mover</strong> y <strong>Colocar</strong>.",
   "m.tr.r2": "<strong>Mover</strong>: adivina las trampas que colocó tu rival, mueve a Kumachi una casilla arriba, abajo, a la izquierda o a la derecha y aplica el efecto de la trampa en la que cae.",
   "m.tr.r3": "<strong>Colocar</strong>: pon boca arriba las trampas que rodean a Kumachi para que ambos las vean; luego reordénalas sin que tu rival lo vea y vuelve a dejarlas boca abajo.",
-  "m.tr.r4": "Las trampas de <strong>Campanilla</strong> hacen avanzar a Kumachi y las de <strong>Miel</strong> la hacen retroceder. Dónde las pongas lo cambia todo.",
+  "m.tr.r4": "Hay trampas que hacen avanzar a Kumachi, como la <strong>Campanilla</strong>, y otras que la hacen retroceder, como la <strong>Miel</strong>. Dónde las pongas lo cambia todo.",
   "m.tr.rnote": "* Son las reglas de la fase de planificación. El juego sigue en desarrollo, así que pueden cambiar.",
   "m.tr.d1": "El objetivo: un juego <strong>que disfrute incluso quien casi nunca juega</strong>. Como el Othello o el juego de cartas Daifugō, está diseñado para que aparezcan nuevas metas, nivel a nivel, a medida que mejoras.",
   "m.tr.lv1": "Hacer avanzar a Kumachi",
@@ -548,5 +548,18 @@
   "m.tr.lv3": "Engañar a tu rival",
   "m.tr.lv4": "Prever la jugada y colocar trampas",
   "m.tr.lv5": "Leer el nivel y el estilo de tu rival",
-  "m.tr.d2": "En una o dos partidas ya se siente el concepto, y cuanto más mejoras, más metas nuevas aparecen. Esa es la profundidad que busco."
+  "m.tr.d2": "En una o dos partidas ya se siente el concepto, y cuanto más mejoras, más metas nuevas aparecen. Esa es la profundidad que busco.",
+  "about.mascots": "Las mascotas de CREA CLAN",
+  "mascot.crea": "Crea",
+  "tr.ch.role": "La cara de Traps",
+  "tr.ch.name": "Kumachi",
+  "tr.ch.desc": "Una chica traviesa con disfraz de oso a la que le encanta la miel. Según las trampas que pongas, ¡va de aquí para allá armando jaleo!",
+  "tr.alt.kumachi": "Ilustración de Kumachi con su disfraz de oso, saltando con las dos patas en alto",
+  "mh.cards": "Cartas de trampa",
+  "m.tr.cardsLead": "El número de cada carta indica cuántas casillas avanza (+) o retrocede (−) Kumachi. ¡Qué carta pones y dónde decide la partida!",
+  "tr.card.1": "Campanilla",
+  "tr.card.2": "Miel",
+  "tr.card.3": "Gong",
+  "tr.card.4": "Campanilla de ángel",
+  "tr.card.5": "Miel espesa"
 };

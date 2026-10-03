@@ -540,7 +540,7 @@
   "m.tr.r1": "À votre tour, vous effectuez deux actions : <strong>Déplacer</strong> et <strong>Poser</strong>.",
   "m.tr.r2": "<strong>Déplacer</strong> : devinez les pièges posés par l'adversaire, déplacez Kumachi d'une case (haut, bas, gauche ou droite) et appliquez l'effet du piège sur lequel elle arrive.",
   "m.tr.r3": "<strong>Poser</strong> : retournez face visible les pièges autour de Kumachi pour que les deux joueurs les voient, puis réorganisez-les à l'abri du regard adverse et reposez-les face cachée.",
-  "m.tr.r4": "Les pièges <strong>Clochette</strong> font avancer Kumachi, les pièges <strong>Miel</strong> la font reculer. Tout dépend de l'endroit où vous les placez.",
+  "m.tr.r4": "Certains pièges font avancer Kumachi, comme la <strong>Clochette</strong>, d'autres la font reculer, comme le <strong>Miel</strong>. Tout dépend de l'endroit où vous les placez.",
   "m.tr.rnote": "* Règles issues de la phase de conception. Le jeu étant en développement, elles peuvent évoluer.",
   "m.tr.d1": "L'objectif : un jeu <strong>que même les personnes qui jouent rarement peuvent apprécier</strong>. Comme l'Othello ou le jeu de cartes Daifugō, il est conçu pour que de nouveaux objectifs se dévoilent par paliers, au fil des progrès.",
   "m.tr.lv1": "Faire avancer Kumachi",
@@ -548,5 +548,18 @@
   "m.tr.lv3": "Déjouer l'adversaire",
   "m.tr.lv4": "Anticiper la suite pour poser ses pièges",
   "m.tr.lv5": "Lire le niveau et le style de l'adversaire",
-  "m.tr.d2": "Une ou deux parties suffisent pour saisir le concept, et plus on progresse, plus de nouveaux objectifs apparaissent. C'est cette profondeur que je vise."
+  "m.tr.d2": "Une ou deux parties suffisent pour saisir le concept, et plus on progresse, plus de nouveaux objectifs apparaissent. C'est cette profondeur que je vise.",
+  "about.mascots": "Les mascottes de CREA CLAN",
+  "mascot.crea": "Crea",
+  "tr.ch.role": "L'égérie de Traps",
+  "tr.ch.name": "Kumachi",
+  "tr.ch.desc": "Une fille espiègle en costume d'ours, folle de miel. Selon les pièges posés, elle file d'un côté puis de l'autre dans un joyeux chaos !",
+  "tr.alt.kumachi": "Illustration de Kumachi en costume d'ours, bondissant les deux pattes levées",
+  "mh.cards": "Cartes pièges",
+  "m.tr.cardsLead": "Le nombre sur chaque carte indique de combien de cases Kumachi avance (+) ou recule (−). Quelle carte poser, et où : tout se joue là !",
+  "tr.card.1": "Clochette",
+  "tr.card.2": "Miel",
+  "tr.card.3": "Gong",
+  "tr.card.4": "Clochette d'ange",
+  "tr.card.5": "Miel épais"
 };
