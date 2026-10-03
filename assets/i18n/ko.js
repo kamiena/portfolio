@@ -677,5 +677,13 @@
   "p.cg.11": "art bit #6: 게임 플레잉 소사이어티",
   "p.cg.12": "현대 미술×인디 게임 전시회 ‘art bit #6: 게임 플레잉 소사이어티’ 개최 안내",
   "p.cg.13": "‘놀이’는 세상을 다시 만들기 위한 기술이었다. 게임과 현대 미술이 던지는 또 다른 가능성｜art bit #6 전시 리포트",
-  "p.in.4": "【일반 투표 시작!】 세계 최대 XR 콘퍼런스 AWE ‘AUGGIE AWARDS 2025’에 STYLY를 활용한 6개 프로젝트 모두 출품"
+  "p.in.4": "【일반 투표 시작!】 세계 최대 XR 콘퍼런스 AWE ‘AUGGIE AWARDS 2025’에 STYLY를 활용한 6개 프로젝트 모두 출품",
+  "hist.filterLabel": "연혁 필터",
+  "hist.f.all": "전체",
+  "hist.f.release": "출시・발표",
+  "hist.f.event": "출전・전시",
+  "hist.f.media": "미디어・수상・강연",
+  "hist.f.life": "활동・기록",
+  "hist.more": "더 보기 ({n}건 더)",
+  "hist.less": "접기"
 };

@@ -677,5 +677,13 @@
   "p.cg.11": "art bit #6 : Game Playing Society",
   "p.cg.12": "À propos de « art bit #6 : Game Playing Society », une exposition art contemporain × jeux indés",
   "p.cg.13": "Le « jeu » était une technique pour refaire le monde : les autres possibilités que nous posent le jeu vidéo et l'art contemporain | compte rendu de l'exposition art bit #6",
-  "p.in.4": "[Le vote du public est ouvert !] Les six projets réalisés avec STYLY en lice aux AUGGIE AWARDS 2025 de l'AWE, la plus grande conférence XR au monde"
+  "p.in.4": "[Le vote du public est ouvert !] Les six projets réalisés avec STYLY en lice aux AUGGIE AWARDS 2025 de l'AWE, la plus grande conférence XR au monde",
+  "hist.filterLabel": "Filtrer les événements",
+  "hist.f.all": "Tout",
+  "hist.f.release": "Sorties et annonces",
+  "hist.f.event": "Salons et expositions",
+  "hist.f.media": "Médias, prix et conférences",
+  "hist.f.life": "Activités et étapes",
+  "hist.more": "Voir plus ({n} de plus)",
+  "hist.less": "Voir moins"
 };

@@ -473,7 +473,6 @@ button { font: inherit; color: inherit; }
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.work-card:hover, .work-card:focus-within { transform: translate(-4px, -4px) rotate(-0.4deg); box-shadow: 10px 10px 0 var(--ink); }
 .work-card[hidden] { display: none; }
 .work-media {
   position: relative; overflow: hidden;
@@ -489,7 +488,6 @@ button { font: inherit; color: inherit; }
 /* 正方形に近い画像は切らずに全体を表示し、左右は画像の背景と同じ色で埋める（02 Kagane） */
 .work-media--dark { background: #202020; }
 .work-media--dark img { object-fit: contain; }
-.work-card:hover .work-media img { transform: scale(1.03); }
 
 /* 年・バッジのシールは、キービジュアル（ロゴや顔）に重ならないよう画像の下に置く */
 .work-stickers { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 2px; }
@@ -974,6 +972,16 @@ html:lang(ja) .about-hello span { display: inline-block; margin-top: 2px; font-s
 }
 .tl-title { margin: 0; font-weight: 900; font-size: 16px; line-height: 1.6; }
 .tl-text { margin: 2px 0 0; font-weight: 500; font-size: 14.5px; line-height: 1.75; }
+/* 絞り込み（件数つき）と「もっと見る」 */
+.filter { display: inline-flex; align-items: center; gap: 6px; }
+.filter-n { min-width: 22px; padding: 0 6px; background: var(--yellow); color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; font-family: var(--font-brand); font-size: 11px; line-height: 1.5; text-align: center; }
+.filter-n:empty { display: none; }
+.tl-filters { margin: -8px 0 30px; }
+.tl-year[hidden], .tl-item[hidden], .tl-more[hidden] { display: none; }
+.tl-more { display: flex; justify-content: center; margin-top: 34px; }
+.tl-more-btn .icon { transition: rotate 0.3s var(--spring); }
+.tl-more-btn[aria-expanded="true"] .icon { rotate: 180deg; }
+.tl-item.tl-pop { animation: pop 0.4s var(--spring) both; }
 @media (max-width: 760px) {
   .tl-year { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .tl-y { position: static; font-size: 44px; }
@@ -994,7 +1002,6 @@ html:lang(ja) .about-hello span { display: inline-block; margin-top: 2px; font-s
   overflow: hidden; text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-a.act-card:hover { transform: translate(-3px, -3px) rotate(0.4deg); box-shadow: 9px 9px 0 var(--ink); }
 .act-visual {
   position: relative;
   display: block;
@@ -1042,7 +1049,6 @@ a.act-card:hover { transform: translate(-3px, -3px) rotate(0.4deg); box-shadow: 
   overflow: hidden; text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.tv-card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); }
 @media (min-width: 821px) {
   .tv-card--feature { grid-column: span 2; grid-row: span 2; }
   .tv-card--feature .tv-title { font-size: 20px; }
@@ -1169,7 +1175,54 @@ a.act-card:hover { transform: translate(-3px, -3px) rotate(0.4deg); box-shadow: 
 .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 1.2, 0.4, 1); transition-delay: var(--d, 0s); }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
+/* ---------- カーソルを当てたときの動き ----------
+   カードは「スクロールで出てくる演出（reveal）」が transform を使うので、ホバーは translate / scale / rotate で動かす
+   （transform 同士だと reveal 側に打ち消されて、影しか変わらなかった） */
+:root { --spring: cubic-bezier(0.34, 1.65, 0.5, 1); }
+:is(.work-card, .act-card, .tv-card, .tl-item),
+.js .reveal:is(.work-card, .act-card, .tv-card, .tl-item) {
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 1.2, 0.4, 1),
+    translate 0.32s var(--spring), scale 0.32s var(--spring), rotate 0.32s var(--spring),
+    box-shadow 0.25s ease, background-color 0.25s ease;
+  transition-delay: var(--d, 0s), var(--d, 0s), 0s, 0s, 0s, 0s, 0s;
+}
+.act-card, .tv-card { position: relative; }
+.work-card:hover, .work-card:focus-within { z-index: 2; translate: -6px -7px; rotate: -0.6deg; box-shadow: 12px 13px 0 var(--ink); }
+.work-card:hover .work-media img { transform: scale(1.06); }
+
+/* ACTIVITY：カードが手前に飛び出し、写真が寄って、バッジが揺れる */
+a.act-card:hover, a.act-card:focus-visible { z-index: 2; translate: -7px -9px; scale: 1.035; rotate: -1deg; box-shadow: 13px 15px 0 var(--ink); }
+.act-img, .act-bg, .act-visual--trip img { transition: scale 0.5s cubic-bezier(0.2, 0.9, 0.3, 1); }
+.act-visual--trip img:nth-of-type(2) { transition-delay: 0.05s; }
+.act-visual--trip img:nth-of-type(3) { transition-delay: 0.1s; }
+.act-mark { transition: scale 0.35s var(--spring), rotate 0.35s var(--spring); }
+.act-more .icon { transition: translate 0.3s var(--spring); }
+a.act-card:hover .act-img { scale: 1.08; }
+a.act-card:hover .act-bg { scale: 1.1; }
+a.act-card:hover .act-visual--trip img { scale: 1.12; }
+a.act-card:hover .act-mark, .tv-card:hover .act-mark { scale: 1.12; rotate: -4deg; }
+a.act-card:hover .act-badge { animation: wiggle 0.6s ease; }
+a.act-card:hover .act-more .icon { translate: 6px 0; }
+
+/* MEDIA：カードが飛び出し、サムネイルが寄って、再生ボタンがぴょこっと大きくなる */
+.tv-card:hover, .tv-card:focus-visible { z-index: 2; translate: -7px -9px; scale: 1.03; rotate: -0.8deg; box-shadow: 13px 15px 0 var(--ink); }
+.tv-card--feature:hover, .tv-card--feature:focus-visible { scale: 1.012; rotate: -0.4deg; }
+.tv-thumb img { transition: scale 0.5s cubic-bezier(0.2, 0.9, 0.3, 1); }
+.yt-play { transition: scale 0.3s var(--spring), rotate 0.3s var(--spring), background-color 0.2s ease; }
+.tv-card:hover .tv-thumb img { scale: 1.08; }
+.tv-card--feature:hover .tv-thumb img { scale: 1.05; }
+.tv-card:hover .yt-play, .yt:hover .yt-play { scale: 1.22; rotate: -6deg; background-color: #ff1f1f; }
+
+/* HISTORY：カーソルが当たったできごとが、ギュッと手前に押し出される（スマホは画面の真ん中に来たもの） */
+.tl-item { transform-origin: 0 50%; }
+.tl-item::before { transition: scale 0.35s var(--spring), translate 0.35s var(--spring); }
+.tl-date { transition: rotate 0.35s var(--spring), scale 0.35s var(--spring); }
+.tl-item:hover, .tl-item.is-hot { z-index: 2; translate: -5px -5px; scale: 1.035; box-shadow: 9px 9px 0 var(--ink); background-color: color-mix(in srgb, var(--c) 16%, var(--white)); }
+.tl-item:hover::before, .tl-item.is-hot::before { translate: 5px 5px; scale: 1.4; }
+.tl-item:hover .tl-date, .tl-item.is-hot .tl-date { rotate: -5deg; scale: 1.08; }
+
 /* ---------- keyframes ---------- */
+@keyframes wiggle { 0%, 100% { rotate: -4deg; } 25% { rotate: -12deg; } 50% { rotate: 3deg; } 75% { rotate: -8deg; } }
 @keyframes spin { to { rotate: 360deg; } }
 @keyframes hop { 0%, 70%, 100% { transform: translateY(0); } 78% { transform: translateY(-0.1em) rotate(-4deg); } 86% { transform: translateY(0) rotate(0); } }
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }

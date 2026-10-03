@@ -34,6 +34,8 @@
     'ui.menuOpen': 'メニューを開く',
     'ui.menuClose': 'メニューを閉じる',
     'ui.play': '動画を再生',
+    'hist.more': 'もっと見る（あと{n}件）',
+    'hist.less': 'たたむ',
   };
   STRINGS.ja = JA;
 
@@ -248,7 +250,7 @@
   }
 
   /* ---------- 作品フィルター ---------- */
-  const filters = $$('.filter');
+  const filters = $$('.filter[data-filter]');
   const cards = $$('.work-card');
   filters.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -260,6 +262,86 @@
       });
     });
   });
+
+  /* ---------- 年表（HISTORY）：絞り込みと「もっと見る」 ---------- */
+  const tl = $('#tl');
+  if (tl) {
+    const tlFilters = $$('[data-tl-filter]');
+    const tlItems = $$('.tl-item', tl);
+    const tlYears = $$('.tl-year', tl);
+    const moreBox = $('.tl-more');
+    const moreBtn = $('.tl-more-btn');
+    const moreLabel = $('.tl-more-label');
+    const MIN_SHOWN = 8;  // たたんだときに見せる件数の目安（年の途中では切らない）
+    const MIN_LEFT = 5;   // 残りがこれより少ないときは、たたまずに全部見せる
+    let tlCat = 'all';
+    let tlOpen = false;
+    let leftCount = 0;
+    const matches = (li) => tlCat === 'all' || li.dataset.cat === tlCat;
+
+    tlFilters.forEach((btn) => {
+      const n = btn.dataset.tlFilter === 'all' ? tlItems.length : tlItems.filter((li) => li.dataset.cat === btn.dataset.tlFilter).length;
+      const badge = $('.filter-n', btn);
+      if (badge) badge.textContent = n;
+    });
+
+    const setMoreLabel = () => {
+      moreLabel.textContent = tlOpen ? ui('hist.less') : ui('hist.more').replace('{n}', leftCount);
+    };
+
+    const renderTl = (animate) => {
+      // たたむ位置：新しい年から順に見せて、MIN_SHOWN 件に届いた年までを表示
+      let shown = 0; let cutAfter = tlYears.length - 1; leftCount = 0;
+      tlYears.forEach((year, i) => {
+        const n = $$('.tl-item', year).filter(matches).length;
+        if (i > cutAfter) { leftCount += n; return; }
+        shown += n;
+        if (shown >= MIN_SHOWN) cutAfter = i;
+      });
+      const folded = !tlOpen && leftCount >= MIN_LEFT;
+      tlYears.forEach((year, i) => {
+        let any = false;
+        $$('.tl-item', year).forEach((li) => {
+          const show = matches(li) && (!folded || i <= cutAfter);
+          if (show && li.hidden && animate) {
+            li.classList.add('tl-pop');
+            li.addEventListener('animationend', () => li.classList.remove('tl-pop'), { once: true });
+          }
+          li.hidden = !show;
+          if (show) any = true;
+        });
+        year.hidden = !any;
+      });
+      moreBox.hidden = leftCount < MIN_LEFT;
+      moreBtn.setAttribute('aria-expanded', String(!folded));
+      setMoreLabel();
+    };
+
+    tlFilters.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        tlCat = btn.dataset.tlFilter;
+        tlFilters.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        renderTl(true);
+      });
+    });
+    moreBtn.addEventListener('click', () => {
+      const before = moreBtn.getBoundingClientRect().top;
+      tlOpen = !tlOpen;
+      renderTl(true);
+      // たたんだときは、ボタンが同じ位置に残るようにスクロールを合わせる（ページの下のほうに取り残されないように）
+      if (!tlOpen) window.scrollBy({ top: moreBtn.getBoundingClientRect().top - before, behavior: 'instant' });
+    });
+    langHooks.push(setMoreLabel);
+    renderTl(false);
+
+    // スマホ（カーソルなし）は、画面の真ん中に来たできごとがギュッと前に出る
+    if (window.matchMedia('(hover: none)').matches && !reduceMotion && 'IntersectionObserver' in window) {
+      const hot = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => entry.target.classList.toggle('is-hot', entry.isIntersecting));
+      }, { rootMargin: '-47% 0px -47% 0px' });
+      tlItems.forEach((li) => hot.observe(li));
+    }
+  }
 
   /* ---------- YouTube（クリックで読み込み） ---------- */
   const ytButtons = new WeakMap();

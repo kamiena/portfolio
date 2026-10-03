@@ -513,90 +513,101 @@
           <p class="sec-lead" data-i18n="hist.lead">新しい順に並べています。</p>
         </div>
 
-        <div class="tl">
+        <div class="filters tl-filters reveal" role="group" data-i18n-attr="aria-label:hist.filterLabel" aria-label="できごとの絞り込み">
+          <button class="filter" type="button" data-tl-filter="all" aria-pressed="true"><span data-i18n="hist.f.all">すべて</span><small class="filter-n"></small></button>
+          <button class="filter" type="button" data-tl-filter="release" aria-pressed="false"><span data-i18n="hist.f.release">リリース・発表</span><small class="filter-n"></small></button>
+          <button class="filter" type="button" data-tl-filter="event" aria-pressed="false"><span data-i18n="hist.f.event">出展・展示</span><small class="filter-n"></small></button>
+          <button class="filter" type="button" data-tl-filter="media" aria-pressed="false"><span data-i18n="hist.f.media">メディア・受賞・登壇</span><small class="filter-n"></small></button>
+          <button class="filter" type="button" data-tl-filter="life" aria-pressed="false"><span data-i18n="hist.f.life">活動・記録</span><small class="filter-n"></small></button>
+        </div>
+
+        <div class="tl" id="tl">
           <section class="tl-year" style="--y:var(--pink)" aria-label="2026">
             <h3 class="tl-y reveal">2026</h3>
             <ol class="tl-list">
-              <li class="tl-item reveal" style="--c:var(--purple)"><span class="tl-date">2026.10</span><div><p class="tl-title" data-i18n="h.2610.t">『PRJ CÔGEIMU』公式サイトを公開、第2作「02 Kagane」『ARE YOU THERE?』を発表</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2026.08</span><div><p class="tl-title" data-i18n="h.2608.t">コミックマーケット108 に出展</p><p class="tl-text" data-i18n="h.2608.d">『ガーデンハント』パッケージ版と、メイナ・クレア・クマチの新作ちびキャラアクスタを頒布。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--pink)"><span class="tl-date">2026.07</span><div><p class="tl-title" data-i18n="h.2607a.t">BSフジ『界隈ほーる』#10「インディーゲーム界隈」第2弾に出演</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2026.07</span><div><p class="tl-title" data-i18n="h.2607b.t">新作アナログゲーム『トラップス』のキービジュアルを公開</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--sky)"><span class="tl-date">2026.07</span><div><p class="tl-title" data-i18n="h.2607c.t">クリエイター向けラジオ「クレアクランカフェ」チャンネル登録者 1,000人突破</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--lime)"><span class="tl-date">2026.06</span><div><p class="tl-title" data-i18n="h.2606.t">『ガーデンハント』が渋谷サクラステージ「404 Not Found」で筐体展示（〜7月）</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--purple)"><span class="tl-date">2026.05</span><div><p class="tl-title" data-i18n="h.2605a.t">国際シンポジウム「ゲーム・プレイング・ソサエティを考える」に登壇</p><p class="tl-text" data-i18n="h.2605a.d">art bit #6 連動企画（立命館大学 衣笠キャンパス）。同時に art bit #6（ホテル アンテルーム 京都）で『CÔGEIMU』プロトタイプVer2 を展示。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--pink)"><span class="tl-date">2026.05</span><div><p class="tl-title" data-i18n="h.2605b.t">BSフジ『界隈ほーる』#4「インディーゲーム界隈」に出演</p><p class="tl-text" data-i18n="h.2605b.d">スタジオで近藤春菜さんが『ガーデンハント』をプレイ。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2026.05</span><div><p class="tl-title" data-i18n="h.2605c.t">東京ゲームダンジョン12 に出展</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2026.02</span><div><p class="tl-title" data-i18n="h.2602a.t">SHIBUYA GAMES WEEK 2026 に2作品を出展</p><p class="tl-text" data-i18n="h.2602a.d">『ガーデンハント』（エキマエゲームパーク）と『CÔGEIMU』（404ゲームセンター）。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--pink)"><span class="tl-date">2026.02</span><div><p class="tl-title" data-i18n="h.2602b.t">NHK「首都圏ネットワーク」で『CÔGEIMU』が紹介される</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--lime)"><span class="tl-date">2026.01</span><div><p class="tl-title" data-i18n="h.2601a.t">『ガーデンハント』Steam で発売！</p><p class="tl-text" data-i18n="h.2601a.d">9言語対応・日本語フルボイス。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--sky)"><span class="tl-date">2026.01</span><div><p class="tl-title" data-i18n="h.2601b.t">インタビュー番組「天瀬モモの社会見学」ゲームクリエイター編に出演</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--purple)"><span class="tl-date">2026.10</span><div><p class="tl-title" data-i18n="h.2610.t">『PRJ CÔGEIMU』公式サイトを公開、第2作「02 Kagane」『ARE YOU THERE?』を発表</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2026.08</span><div><p class="tl-title" data-i18n="h.2608.t">コミックマーケット108 に出展</p><p class="tl-text" data-i18n="h.2608.d">『ガーデンハント』パッケージ版と、メイナ・クレア・クマチの新作ちびキャラアクスタを頒布。</p></div></li>
+              <li class="tl-item reveal" data-cat="media" style="--c:var(--pink)"><span class="tl-date">2026.07</span><div><p class="tl-title" data-i18n="h.2607a.t">BSフジ『界隈ほーる』#10「インディーゲーム界隈」第2弾に出演</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--yellow)"><span class="tl-date">2026.07</span><div><p class="tl-title" data-i18n="h.2607b.t">新作アナログゲーム『トラップス』のキービジュアルを公開</p></div></li>
+              <li class="tl-item reveal" data-cat="life" style="--c:var(--sky)"><span class="tl-date">2026.07</span><div><p class="tl-title" data-i18n="h.2607c.t">クリエイター向けラジオ「クレアクランカフェ」チャンネル登録者 1,000人突破</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--lime)"><span class="tl-date">2026.06</span><div><p class="tl-title" data-i18n="h.2606.t">『ガーデンハント』が渋谷サクラステージ「404 Not Found」で筐体展示（〜7月）</p></div></li>
+              <li class="tl-item reveal" data-cat="media" style="--c:var(--purple)"><span class="tl-date">2026.05</span><div><p class="tl-title" data-i18n="h.2605a.t">国際シンポジウム「ゲーム・プレイング・ソサエティを考える」に登壇</p><p class="tl-text" data-i18n="h.2605a.d">art bit #6 連動企画（立命館大学 衣笠キャンパス）。同時に art bit #6（ホテル アンテルーム 京都）で『CÔGEIMU』プロトタイプVer2 を展示。</p></div></li>
+              <li class="tl-item reveal" data-cat="media" style="--c:var(--pink)"><span class="tl-date">2026.05</span><div><p class="tl-title" data-i18n="h.2605b.t">BSフジ『界隈ほーる』#4「インディーゲーム界隈」に出演</p><p class="tl-text" data-i18n="h.2605b.d">スタジオで近藤春菜さんが『ガーデンハント』をプレイ。</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2026.05</span><div><p class="tl-title" data-i18n="h.2605c.t">東京ゲームダンジョン12 に出展</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2026.02</span><div><p class="tl-title" data-i18n="h.2602a.t">SHIBUYA GAMES WEEK 2026 に2作品を出展</p><p class="tl-text" data-i18n="h.2602a.d">『ガーデンハント』（エキマエゲームパーク）と『CÔGEIMU』（404ゲームセンター）。</p></div></li>
+              <li class="tl-item reveal" data-cat="media" style="--c:var(--pink)"><span class="tl-date">2026.02</span><div><p class="tl-title" data-i18n="h.2602b.t">NHK「首都圏ネットワーク」で『CÔGEIMU』が紹介される</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--lime)"><span class="tl-date">2026.01</span><div><p class="tl-title" data-i18n="h.2601a.t">『ガーデンハント』Steam で発売！</p><p class="tl-text" data-i18n="h.2601a.d">9言語対応・日本語フルボイス。</p></div></li>
+              <li class="tl-item reveal" data-cat="media" style="--c:var(--sky)"><span class="tl-date">2026.01</span><div><p class="tl-title" data-i18n="h.2601b.t">インタビュー番組「天瀬モモの社会見学」ゲームクリエイター編に出演</p></div></li>
             </ol>
           </section>
 
           <section class="tl-year" style="--y:var(--lime)" aria-label="2025">
             <h3 class="tl-y reveal">2025</h3>
             <ol class="tl-list">
-              <li class="tl-item reveal" style="--c:var(--lime)"><span class="tl-date">2025.12</span><div><p class="tl-title" data-i18n="h.2512.t">コミックマーケット107 で『ガーデンハント』完成版をパッケージで先行頒布</p><p class="tl-text" data-i18n="h.2512.d">初めてのパッケージ版。メイナ役・柊 優花さんのサイン入り限定版は完売。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--purple)"><span class="tl-date">2025.11</span><div><p class="tl-title" data-i18n="h.2511a.t">『CÔGEIMU』プロトタイプ発表展示会＆ゲームアートトーク</p><p class="tl-text" data-i18n="h.2511a.d">渋谷サクラステージ「404 Not Found」にて。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2025.11</span><div><p class="tl-title" data-i18n="h.2511b.t">東京ゲームダンジョン10、SAKURA CREATOR'S MARKET XG に出展</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2025.08</span><div><p class="tl-title" data-i18n="h.2508.t">コミックマーケット106、東京ゲームダンジョン9 に出展</p><p class="tl-text" data-i18n="h.2508.d">『ガーデンハント』β版ROMはディスク版・ダウンロード版ともに完売。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--lime)"><span class="tl-date">2025.07</span><div><p class="tl-title" data-i18n="h.2507.t">『ガーデンハント』Steam ストアページを公開</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--pink)"><span class="tl-date">2025.06</span><div><p class="tl-title" data-i18n="h.2506.t">『走れ！クレアちゃん』30,000 ダウンロード突破！</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2025.05</span><div><p class="tl-title" data-i18n="h.2505.t">東京ゲームダンジョン8 に初出展、正式タイトル『ガーデンハント』が決定</p><p class="tl-text" data-i18n="h.2505.d">DMM.com 本社で開催された「ゲーム世界展開会議」でもブース展示。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--orange)"><span class="tl-date">2025.02</span><div><p class="tl-title" data-i18n="h.2502a.t">『Immersive Novel』が NEWVIEW AWARDS 2024 GOLD PRIZE（最優秀賞）を受賞</p><p class="tl-text" data-i18n="h.2502a.d">10か国以上・90作品以上の中から選出。NEWVIEW FEST 2024（渋谷PARCO「GALLERY X」ほか）で展示。</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--sky)"><span class="tl-date">2025.02</span><div><p class="tl-title" data-i18n="h.2502b.t">クリエイター向けラジオ「クレアクランカフェ」をスタート</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--lime)"><span class="tl-date">2025.01</span><div><p class="tl-title" data-i18n="h.2501.t">『PRJ rain』α版を BOOTH でダウンロード販売</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--lime)"><span class="tl-date">2025.12</span><div><p class="tl-title" data-i18n="h.2512.t">コミックマーケット107 で『ガーデンハント』完成版をパッケージで先行頒布</p><p class="tl-text" data-i18n="h.2512.d">初めてのパッケージ版。メイナ役・柊 優花さんのサイン入り限定版は完売。</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--purple)"><span class="tl-date">2025.11</span><div><p class="tl-title" data-i18n="h.2511a.t">『CÔGEIMU』プロトタイプ発表展示会＆ゲームアートトーク</p><p class="tl-text" data-i18n="h.2511a.d">渋谷サクラステージ「404 Not Found」にて。</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2025.11</span><div><p class="tl-title" data-i18n="h.2511b.t">東京ゲームダンジョン10、SAKURA CREATOR'S MARKET XG に出展</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2025.08</span><div><p class="tl-title" data-i18n="h.2508.t">コミックマーケット106、東京ゲームダンジョン9 に出展</p><p class="tl-text" data-i18n="h.2508.d">『ガーデンハント』β版ROMはディスク版・ダウンロード版ともに完売。</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--lime)"><span class="tl-date">2025.07</span><div><p class="tl-title" data-i18n="h.2507.t">『ガーデンハント』Steam ストアページを公開</p></div></li>
+              <li class="tl-item reveal" data-cat="life" style="--c:var(--pink)"><span class="tl-date">2025.06</span><div><p class="tl-title" data-i18n="h.2506.t">『走れ！クレアちゃん』30,000 ダウンロード突破！</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2025.05</span><div><p class="tl-title" data-i18n="h.2505.t">東京ゲームダンジョン8 に初出展、正式タイトル『ガーデンハント』が決定</p><p class="tl-text" data-i18n="h.2505.d">DMM.com 本社で開催された「ゲーム世界展開会議」でもブース展示。</p></div></li>
+              <li class="tl-item reveal" data-cat="media" style="--c:var(--orange)"><span class="tl-date">2025.02</span><div><p class="tl-title" data-i18n="h.2502a.t">『Immersive Novel』が NEWVIEW AWARDS 2024 GOLD PRIZE（最優秀賞）を受賞</p><p class="tl-text" data-i18n="h.2502a.d">10か国以上・90作品以上の中から選出。NEWVIEW FEST 2024（渋谷PARCO「GALLERY X」ほか）で展示。</p></div></li>
+              <li class="tl-item reveal" data-cat="life" style="--c:var(--sky)"><span class="tl-date">2025.02</span><div><p class="tl-title" data-i18n="h.2502b.t">クリエイター向けラジオ「クレアクランカフェ」をスタート</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--lime)"><span class="tl-date">2025.01</span><div><p class="tl-title" data-i18n="h.2501.t">『PRJ rain』α版を BOOTH でダウンロード販売</p></div></li>
             </ol>
           </section>
 
           <section class="tl-year" style="--y:var(--yellow)" aria-label="2024">
             <h3 class="tl-y reveal">2024</h3>
             <ol class="tl-list">
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2024.12</span><div><p class="tl-title" data-i18n="h.2412.t">コミックマーケット105 で新作『PRJ rain』α版ROMを頒布（完売）</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2024.08</span><div><p class="tl-title" data-i18n="h.2408.t">コミックマーケット104 で『rain（仮）』プロト版を初頒布</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2024.12</span><div><p class="tl-title" data-i18n="h.2412.t">コミックマーケット105 で新作『PRJ rain』α版ROMを頒布（完売）</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2024.08</span><div><p class="tl-title" data-i18n="h.2408.t">コミックマーケット104 で『rain（仮）』プロト版を初頒布</p></div></li>
             </ol>
           </section>
 
           <section class="tl-year" style="--y:var(--orange)" aria-label="2023">
             <h3 class="tl-y reveal">2023</h3>
             <ol class="tl-list">
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2023.12</span><div><p class="tl-title" data-i18n="h.2312.t">コミックマーケット103 に出展（ゲームROM完売）</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--pink)"><span class="tl-date">2023.08</span><div><p class="tl-title" data-i18n="h.2308.t">『走れ！クレアちゃん』Steam 版を配信、コミックマーケット102 に出展</p><p class="tl-text" data-i18n="h.2308.d">新作の主人公「メイナ」をブースで初お披露目。</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2023.12</span><div><p class="tl-title" data-i18n="h.2312.t">コミックマーケット103 に出展（ゲームROM完売）</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--pink)"><span class="tl-date">2023.08</span><div><p class="tl-title" data-i18n="h.2308.t">『走れ！クレアちゃん』Steam 版を配信、コミックマーケット102 に出展</p><p class="tl-text" data-i18n="h.2308.d">新作の主人公「メイナ」をブースで初お披露目。</p></div></li>
             </ol>
           </section>
 
           <section class="tl-year" style="--y:var(--sky)" aria-label="2020">
             <h3 class="tl-y reveal">2020</h3>
             <ol class="tl-list">
-              <li class="tl-item reveal" style="--c:var(--pink)"><span class="tl-date">2020.09</span><div><p class="tl-title" data-i18n="h.2009.t">『走れ！クレアちゃん』スマホアプリ版をリリース</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--sky)"><span class="tl-date">2020.06</span><div><p class="tl-title" data-i18n="h.2006.t">INDIE Live Expo 2020 で『ぶんまわしヒーロー』が紹介される</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--pink)"><span class="tl-date">2020.05</span><div><p class="tl-title" data-i18n="h.2005.t">インディーゲームサークル「クレアクラン」を立ち上げ</p><p class="tl-text" data-i18n="h.2005.d">1作目『走れ！クレアちゃん』を unity1week 参加作として unityroom で公開。</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--pink)"><span class="tl-date">2020.09</span><div><p class="tl-title" data-i18n="h.2009.t">『走れ！クレアちゃん』スマホアプリ版をリリース</p></div></li>
+              <li class="tl-item reveal" data-cat="media" style="--c:var(--sky)"><span class="tl-date">2020.06</span><div><p class="tl-title" data-i18n="h.2006.t">INDIE Live Expo 2020 で『ぶんまわしヒーロー』が紹介される</p></div></li>
+              <li class="tl-item reveal" data-cat="life" style="--c:var(--pink)"><span class="tl-date">2020.05</span><div><p class="tl-title" data-i18n="h.2005.t">インディーゲームサークル「クレアクラン」を立ち上げ</p><p class="tl-text" data-i18n="h.2005.d">1作目『走れ！クレアちゃん』を unity1week 参加作として unityroom で公開。</p></div></li>
             </ol>
           </section>
 
           <section class="tl-year" style="--y:var(--purple)" aria-label="2019">
             <h3 class="tl-y reveal">2019</h3>
             <ol class="tl-list">
-              <li class="tl-item reveal" style="--c:var(--yellow)"><span class="tl-date">2019.12</span><div><p class="tl-title" data-i18n="h.1912.t">コミックマーケット97 に出展して『ビリリスイッチ』を発表、『ぶんまわしヒーロー』17,000ダウンロード突破</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--sky)"><span class="tl-date">2019.05</span><div><p class="tl-title" data-i18n="h.1905.t">『ぶんまわしヒーロー』Steam で無料配信スタート</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--sky)"><span class="tl-date">2019.02</span><div><p class="tl-title" data-i18n="h.1902.t">卒業制作展で『ぶんまわしヒーロー』を展示</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--yellow)"><span class="tl-date">2019.12</span><div><p class="tl-title" data-i18n="h.1912.t">コミックマーケット97 に出展して『ビリリスイッチ』を発表、『ぶんまわしヒーロー』17,000ダウンロード突破</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--sky)"><span class="tl-date">2019.05</span><div><p class="tl-title" data-i18n="h.1905.t">『ぶんまわしヒーロー』Steam で無料配信スタート</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--sky)"><span class="tl-date">2019.02</span><div><p class="tl-title" data-i18n="h.1902.t">卒業制作展で『ぶんまわしヒーロー』を展示</p></div></li>
             </ol>
           </section>
 
           <section class="tl-year" style="--y:var(--pink)" aria-label="2018">
             <h3 class="tl-y reveal">2018</h3>
             <ol class="tl-list">
-              <li class="tl-item reveal" style="--c:var(--sky)"><span class="tl-date">2018.09</span><div><p class="tl-title" data-i18n="h.1809.t">東京ゲームショウ2018 インディーゲームコーナーに『ぶんまわしヒーロー』を出展</p></div></li>
-              <li class="tl-item reveal" style="--c:var(--sky)"><span class="tl-date">2018.05</span><div><p class="tl-title" data-i18n="h.1805.t">Connect Fest 2018（京都）で『ぶんまわしヒーロー』を展示</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--sky)"><span class="tl-date">2018.09</span><div><p class="tl-title" data-i18n="h.1809.t">東京ゲームショウ2018 インディーゲームコーナーに『ぶんまわしヒーロー』を出展</p></div></li>
+              <li class="tl-item reveal" data-cat="event" style="--c:var(--sky)"><span class="tl-date">2018.05</span><div><p class="tl-title" data-i18n="h.1805.t">Connect Fest 2018（京都）で『ぶんまわしヒーロー』を展示</p></div></li>
             </ol>
           </section>
 
           <section class="tl-year" style="--y:var(--lime)" aria-label="2015">
             <h3 class="tl-y reveal">2015</h3>
             <ol class="tl-list">
-              <li class="tl-item reveal" style="--c:var(--orange)"><span class="tl-date">2015</span><div><p class="tl-title" data-i18n="h.2015.t">処女作『ちんあなご』（モグラ叩きゲーム）を制作</p><p class="tl-text" data-i18n="h.2015.d">BitSummit での展示をきっかけに、ゲームクリエイターの道へ。</p></div></li>
+              <li class="tl-item reveal" data-cat="release" style="--c:var(--orange)"><span class="tl-date">2015</span><div><p class="tl-title" data-i18n="h.2015.t">処女作『ちんあなご』（モグラ叩きゲーム）を制作</p><p class="tl-text" data-i18n="h.2015.d">BitSummit での展示をきっかけに、ゲームクリエイターの道へ。</p></div></li>
             </ol>
           </section>
+        </div>
+        <div class="tl-more" hidden>
+          <button class="btn tl-more-btn" type="button" aria-controls="tl" aria-expanded="false"><span class="tl-more-label"></span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></button>
         </div>
       </div>
     </section>
