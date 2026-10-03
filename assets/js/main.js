@@ -486,7 +486,7 @@
      iPhone の Safari は「文節で改行する」CSS（word-break: auto-phrase）に対応していないので、
      BudouX（budoux-ja.js）で文節の切れ目を求めて <wbr> を入れ、CSS の keep-all でそこだけで改行させる。 */
   const JA_TEXT = /[\u3040-\u30ff\u3400-\u9fff]/;
-  const KEEP_TOGETHER = ['しゅと犬くん'];                // 名前など、途中で切りたくない言葉
+  const KEEP_TOGETHER = ['しゅと犬くん', '手がけ'];                // 名前など、途中で切りたくない言葉
   const NO_SPACE_BREAK = ['404 Not Found', 'art bit #6', 'NEWVIEW AWARDS', 'SHIBUYA GAMES WEEK'];   // 空白で切りたくない英語の名前
   const OPEN = '「『（【〈《', CLOSE = '」』）】〉》';
   const NO_START = '、。，．！？!?・ー〜」』）】〉》ぁぃぅぇぉっゃゅょァィゥェォッャュョ';   // 行の頭に来てはいけない文字
