@@ -412,7 +412,6 @@
         ctx.fillStyle = p.c;
         if (p.dot) { ctx.beginPath(); ctx.arc(0, 0, r * 0.45, 0, Math.PI * 2); ctx.fill(); continue; }
         sparkle(r); ctx.fill();
-        ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(29, 32, 69, 0.18)'; ctx.stroke();
       }
       ctx.globalAlpha = 1;
       raf = parts.length ? requestAnimationFrame(tick) : 0;

@@ -640,5 +640,14 @@
   "cgy.alt.sgw": "SHIBUYA GAMES WEEK 2026 的展位",
   "cgy.alt.artbit": "在 art bit #6 凝視 Yuki 的瞳孔遊玩的來賓",
   "cgy.alt.room": "心之世界中，擺在白色房間裡的椅子",
-  "m.cgy.cv": "鷲見友美 Jena（日語）／夏來 Summer（英語）"
+  "m.cgy.cv": "鷲見友美 Jena（日語）／夏來 Summer（英語）",
+  "hero.toProfile": "查看個人簡介",
+  "hero.prizeLabel": "NEWVIEW AWARDS GOLD PRIZE 得獎作品《Immersive Novel》",
+  "tv.1.f1": "在獨立遊戲圈特輯中，節目造訪了澀谷 Sakura Stage 的「404 Not Found」",
+  "tv.1.f2": "以獨立遊戲創作者的身分被介紹，並接受了「為什麼做遊戲」「做什麼樣的遊戲」的訪問",
+  "tv.1.f3": "介紹了《花園狩獵》，近藤春菜還在攝影棚親自試玩！",
+  "tv.1.q": "大家玩得非常盡興，還為「只要500日圓就能玩得這麼熱血」而驚喜，讓我非常開心。",
+  "stats.dlMore": "+",
+  "stats.subsMore": "+",
+  "stats.eventsMore": "+"
 };

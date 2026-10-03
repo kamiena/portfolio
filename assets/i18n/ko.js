@@ -659,5 +659,14 @@
   "cgy.alt.sgw": "SHIBUYA GAMES WEEK 2026의 전시 부스",
   "cgy.alt.artbit": "art bit #6에서 Yuki의 눈동자를 들여다보며 노는 관람객",
   "cgy.alt.room": "마음의 세계 속 하얀 방에 놓인 의자",
-  "m.cgy.cv": "스미 도모미 제나(일본어)／나쓰키 서머(영어)"
+  "m.cgy.cv": "스미 도모미 제나(일본어)／나쓰키 서머(영어)",
+  "hero.toProfile": "프로필 보기",
+  "hero.prizeLabel": "NEWVIEW AWARDS GOLD PRIZE 수상작 『Immersive Novel』 보기",
+  "tv.1.f1": "인디 게임계 특집으로, 방송팀이 시부야 사쿠라 스테이지의 ‘404 Not Found’를 방문",
+  "tv.1.f2": "인디 게임 크리에이터로 소개되어, 왜 게임을 만드는지, 어떤 게임을 만드는지 인터뷰",
+  "tv.1.f3": "『가든 헌트』를 소개하고, 스튜디오에서 곤도 하루나 씨가 직접 플레이!",
+  "tv.1.q": "정말 즐겁게 플레이해 주셨고, ‘500엔으로 이렇게 뜨겁게 즐길 수 있다니 대단하다’며 기뻐해 주셔서 정말 기뻤어요.",
+  "stats.dlMore": "+",
+  "stats.subsMore": "+",
+  "stats.eventsMore": "+"
 };

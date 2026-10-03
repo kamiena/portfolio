@@ -659,5 +659,14 @@
   "cgy.alt.sgw": "Lo stand allo SHIBUYA GAMES WEEK 2026",
   "cgy.alt.artbit": "Un visitatore di art bit #6 guarda negli occhi di Yuki per giocare",
   "cgy.alt.room": "Una sedia in una stanza bianca del Mondo del Cuore",
-  "m.cgy.cv": "Tomomi Jiena Sumi (giapponese) / Summer Natsuki (inglese)"
+  "m.cgy.cv": "Tomomi Jiena Sumi (giapponese) / Summer Natsuki (inglese)",
+  "hero.toProfile": "Vedi il profilo",
+  "hero.prizeLabel": "Vincitore del GOLD PRIZE dei NEWVIEW AWARDS: vedi Immersive Novel",
+  "tv.1.f1": "In uno speciale sulla scena indie, il programma ha visitato il 404 Not Found allo Shibuya Sakura Stage",
+  "tv.1.f2": "Sono stato presentato come creatore di giochi indie e intervistato sul perché creo giochi e su che tipo di giochi faccio",
+  "tv.1.f3": "È stato presentato Garden Hunt e Haruna Kondo ci ha giocato in studio!",
+  "tv.1.q": "Mi ha reso davvero felice vedere che si sono divertiti così tanto, entusiasti che un gioco da 500 yen potesse essere così appassionante.",
+  "stats.dlMore": "+",
+  "stats.subsMore": "+",
+  "stats.eventsMore": "+"
 };
