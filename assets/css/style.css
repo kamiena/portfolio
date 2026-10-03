@@ -462,8 +462,19 @@ button { font: inherit; color: inherit; }
   border-bottom: var(--bd);
 }
 .work-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 0.4s ease; }
-/* 画像の上下に余白ができるときは、画像の上端・下端の色で埋める（ちんあなご：上は海の青、下は砂） */
-.work-media--sea { background: linear-gradient(#5497ff 50%, #f0edde 50%); }
+/* 正方形などの画像：切り抜かずに全体を表示し、余白はぼかした同じ画像で埋める */
+.work-media--fit { aspect-ratio: 16 / 9; }
+.work-card.is-featured .work-media--fit { aspect-ratio: auto; min-height: 320px; }
+.work-media--fit .work-bg { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; filter: blur(18px) saturate(1.15); transform: scale(1.2); opacity: 0.9; }
+.work-media--fit img:not(.work-bg) {
+  position: absolute; top: 50%; left: 50%;
+  width: auto; height: 84%; aspect-ratio: 1 / 1; object-fit: contain;
+  transform: translate(-50%, -50%);
+  border: var(--bd); box-shadow: var(--shadow-sm);
+}
+.work-card:hover .work-media--fit .work-bg { transform: scale(1.2); }
+.work-card:hover .work-media--fit img:not(.work-bg) { transform: translate(-50%, -50%) scale(1.03); }
+@media (max-width: 860px) { .work-card.is-featured .work-media--fit { aspect-ratio: 16 / 9; min-height: 0; } }
 .work-card:hover .work-media img { transform: scale(1.03); }
 
 /* 年・バッジのシールは、キービジュアル（ロゴや顔）に重ならないよう画像の下に置く */
@@ -621,6 +632,29 @@ button { font: inherit; color: inherit; }
 .wm-block:not(.wm-block--full) .wm-steps li { grid-template-columns: 1fr; gap: 2px; }
 .wm-block:not(.wm-block--full) .wm-steps time { justify-self: start; }
 
+/* ガーデンハントのキャラクター紹介 */
+.wm-chars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.wm-char { padding: 14px 16px 16px; background: var(--white); border: var(--bd); border-radius: 18px; box-shadow: var(--shadow-sm); }
+.wm-char-img {
+  display: grid; place-items: center; height: 220px; margin-bottom: 12px;
+  background-color: var(--c);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.7) 3px, transparent 3.5px);
+  background-size: 18px 18px;
+  border: var(--bd-thin); border-radius: 14px;
+}
+/* 画像は切り抜かずに全体を表示 */
+.wm-char-img { position: relative; }
+.wm-char-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+.wm-char-role { display: inline-block; margin: 0 0 4px !important; padding: 0 10px; background: var(--accent); border: 2px solid var(--ink); border-radius: 999px; font-size: 12px; font-weight: 900 !important; }
+.wm-char-name { margin: 0 0 6px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 22px; line-height: 1.3; }
+.wm-char p:last-child { font-size: 13.5px; line-height: 1.75; }
+.wm-note { margin: 10px 0 0 !important; font-size: 12px; font-weight: 700 !important; opacity: 0.7; }
+@media (max-width: 820px) {
+  .wm-chars { grid-template-columns: minmax(0, 1fr); }
+  .wm-char { display: grid; grid-template-columns: 120px minmax(0, 1fr); column-gap: 14px; align-items: start; }
+  .wm-char-img { grid-row: span 3; height: 140px; margin: 0; }
+}
+
 /* ちんあなご：はじまりの思い出（写真＋文章） */
 .wm-origin { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 22px; align-items: center; }
 .wm-origin-photo { margin: 0; }
@@ -726,7 +760,37 @@ html:lang(ja) .press-note { display: none; }
   box-shadow: var(--shadow-lg);
   text-align: center;
 }
-.profile-card > img { width: 190px; height: 190px; margin: 0 auto; border-radius: 50%; border: 5px solid var(--ink); background: var(--sky); box-shadow: 6px 6px 0 var(--pink); }
+/* 全身のちびキャラ：カードにのせて、ホバー（スマホはタップ）で口をあけた表情に切り替え */
+.profile-chibi {
+  position: relative;
+  margin: -6px auto 0; width: 100%; height: 270px;
+  background-color: var(--sky);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.45) 3px, transparent 3.5px);
+  background-size: 18px 18px;
+  border: var(--bd); border-radius: 22px;
+  box-shadow: 6px 6px 0 var(--pink);
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.profile-chibi img {
+  position: absolute; left: 50%; bottom: 6px;
+  width: auto; height: 250px;   /* 頭からつま先まで全身がパネルに収まる大きさ */
+  transform: translateX(-50%);
+  transform-origin: 50% 100%;
+  transition: opacity 0.12s ease, transform 0.25s cubic-bezier(.3, 1.6, .5, 1);
+}
+.profile-chibi .chibi-b { opacity: 0; }
+.profile-chibi.is-on .chibi-a { opacity: 0; }
+.profile-chibi.is-on .chibi-b { opacity: 1; }
+.profile-chibi.is-on img { transform: translateX(-50%) translateY(-6px) scale(1.03); }
+/* マウスがある端末だけホバーで切り替え（スマホはタップ時のホバーが残るため除外） */
+@media (hover: hover) {
+  .profile-card:hover .chibi-a { opacity: 0; }
+  .profile-card:hover .chibi-b { opacity: 1; }
+  .profile-card:hover .profile-chibi img { transform: translateX(-50%) translateY(-6px) scale(1.03); }
+}
+@media (prefers-reduced-motion: reduce) { .profile-chibi img { transition: opacity 0.12s ease; } .profile-chibi.is-on img, .profile-card:hover .profile-chibi img { transform: translateX(-50%); } }
 .profile-name { margin: 18px 0 0; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 40px; line-height: 1.1; }
 .profile-en { margin: 4px 0 0; font-weight: 900; letter-spacing: 0.16em; opacity: 0.65; }
 .profile-role { margin: 14px 0 0; font-weight: 800; font-size: 15px; line-height: 1.7; }
@@ -893,9 +957,13 @@ a.act-card:hover { transform: translate(-3px, -3px) rotate(0.4deg); box-shadow: 
 .tv-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .tv-thumb--pattern { display: grid; place-items: center; background-color: var(--sky); background-image: radial-gradient(rgba(255, 255, 255, 0.45) 3px, transparent 3.5px); background-size: 20px 20px; }
 .tv-body { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px 16px; }
-.tv-ch { display: flex; align-items: center; gap: 8px; margin: 0; font-weight: 900; font-size: 13px; }
+.tv-ch { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0; font-weight: 900; font-size: 13px; }
 .tv-ch > span:first-child, .tv-ch { letter-spacing: 0.04em; }
-.tv-ch time { padding: 0 8px; background: var(--yellow); border: 2px solid var(--ink); border-radius: 8px; font-family: var(--font-brand); font-size: 11px; }
+.tv-ch time, .tv-tag { padding: 0 8px; background: var(--yellow); border: 2px solid var(--ink); border-radius: 8px; font-family: var(--font-brand); font-size: 11px; }
+.tv-tag { font-family: var(--font-body); font-weight: 900; line-height: 1.6; white-space: nowrap; }
+/* 縦長のショート動画は切り抜かずに全体を表示（余白はぼかした同じ画像） */
+.tv-thumb--short .tv-bg { position: absolute; inset: 0; filter: blur(14px) saturate(1.2); transform: scale(1.25); opacity: 0.85; }
+.tv-thumb--short .tv-img { position: absolute; inset: 0; object-fit: contain; }
 .tv-title { margin: 0; font-weight: 900; font-size: 16px; line-height: 1.5; }
 .tv-text { margin: 0; font-weight: 600; font-size: 13.5px; line-height: 1.7; }
 
