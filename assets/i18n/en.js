@@ -688,7 +688,7 @@
   "hist.less": "Show less",
   "tv.3.alt": "NHK Shutoken Network broadcast: the mascot Shutoken-kun and CÔGEIMU 01 Yuki",
   "cgy.alt.nhk": "A souvenir photo with a cast member and Shutoken-kun of NHK Shutoken Network, next to 01 Yuki",
-  "a.photo.badge": "24 photos",
+  "a.photo.badge": "25 photos",
   "a.photo.t": "Photo Art",
   "a.photo.d": "A photography hobby: I edit and design my photos into single finished images, practising image-making and composition to widen my range of expression.",
   "a.photo.more": "See the photos",
@@ -721,5 +721,6 @@
   "photo.alt.img-2731": "The moon and a bare tree in the winter night sky",
   "photo.alt.img-2076": "A gingerbread house covered in snow",
   "photo.alt.img-0010": "The sun setting into the sea",
-  "photo.alt.img-0009": "A marina under a blue sky"
+  "photo.alt.img-0009": "A marina under a blue sky",
+  "photo.alt.sakura-night": "Cherry trees lit up in purple at night, and people taking photos"
 };

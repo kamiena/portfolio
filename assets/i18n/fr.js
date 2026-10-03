@@ -688,7 +688,7 @@
   "hist.less": "Voir moins",
   "tv.3.alt": "Émission Shutoken Network de la NHK : la mascotte Shutoken-kun et CÔGEIMU 01 Yuki",
   "cgy.alt.nhk": "Photo souvenir avec une personne de l'émission et Shutoken-kun (NHK Shutoken Network), à côté de 01 Yuki",
-  "a.photo.badge": "24 photos",
+  "a.photo.badge": "25 photos",
   "a.photo.t": "Photo Art",
   "a.photo.d": "Une passion pour la photo : je retravaille et compose mes photos pour en faire des images finies, pour m'exercer à la création d'images et au cadrage, et élargir mon expression.",
   "a.photo.more": "Voir les photos",
@@ -721,5 +721,6 @@
   "photo.alt.img-2731": "La lune et un arbre nu dans le ciel d'hiver",
   "photo.alt.img-2076": "Une maison en pain d'épice sous la neige",
   "photo.alt.img-0010": "Le soleil qui se couche dans la mer",
-  "photo.alt.img-0009": "Une marina sous un ciel bleu"
+  "photo.alt.img-0009": "Une marina sous un ciel bleu",
+  "photo.alt.sakura-night": "Cerisiers illuminés de violet la nuit, et des gens qui les photographient"
 };
