@@ -749,5 +749,14 @@
   "goods.7.name": "Chin-Anago-Sticker",
   "goods.7.desc": "Sticker zu meinem allerersten Spiel Chin-Anago. Gefleckter oder Gestreifter Röhrenaal – welcher ist welcher?",
   "goods.8.name": "Crea-Acrylaufsteller",
-  "goods.8.desc": "Mein erstes eigenes Acryl-Merch: ein Aufsteller und ein Mini-Acrylanhänger von Maskottchen Crea, verkauft auf dem Comic Market 102."
+  "goods.8.desc": "Mein erstes eigenes Acryl-Merch: ein Aufsteller und ein Mini-Acrylanhänger von Maskottchen Crea, verkauft auf dem Comic Market 102.",
+  "hero.ctaFollow": "Auf X folgen",
+  "follow.title": "Neuigkeiten zuerst auf X!",
+  "follow.desc": "Entwicklungsstand, Event- und Merch-Ankündigungen, Reiseberichte – auf X teile ich alles zuerst.",
+  "follow.btn": "@KamiEna_Game folgen",
+  "follow.tripTitle": "Auch die nächste Reise gibt es auf X!",
+  "follow.tripDesc": "Neue „#ゲームクリエイターの〇〇旅行“-Posts erscheinen zuerst auf X.",
+  "w.cgk.france": "Ausstellung in Frankreich!",
+  "m.cgk.france": "Ausstellung in Frankreich bestätigt!",
+  "m.cgk.franceSoon": "Details folgen in Kürze"
 };

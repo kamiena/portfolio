@@ -749,5 +749,14 @@
   "goods.7.name": "Adesivi di Chin-Anago",
   "goods.7.desc": "Adesivi del mio primissimo gioco, Chin-Anago. Anguilla giardiniera maculata o a strisce: quale è quale?",
   "goods.8.name": "Stand acrilico di Crea",
-  "goods.8.desc": "Il mio primo gadget originale in acrilico: uno stand e un mini portachiavi della mascotte Crea, venduti al Comic Market 102."
+  "goods.8.desc": "Il mio primo gadget originale in acrilico: uno stand e un mini portachiavi della mascotte Crea, venduti al Comic Market 102.",
+  "hero.ctaFollow": "Seguimi su X",
+  "follow.title": "Le ultime novità su X!",
+  "follow.desc": "Sviluppo dei giochi, eventi, nuovi gadget e racconti di viaggio: su X li condivido per primi.",
+  "follow.btn": "Segui @KamiEna_Game",
+  "follow.tripTitle": "Anche il prossimo viaggio lo racconterò su X!",
+  "follow.tripDesc": "I nuovi post “#ゲームクリエイターの〇〇旅行” arrivano prima su X.",
+  "w.cgk.france": "In mostra in Francia!",
+  "m.cgk.france": "Mostra in Francia confermata!",
+  "m.cgk.franceSoon": "Dettagli a breve"
 };

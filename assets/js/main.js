@@ -522,7 +522,9 @@
   const breakPhrases = (scope) => {
     if (!window.KE_BUDOUX || currentLang !== 'ja' || !scope) return;
     const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
-      acceptNode: (n) => (n.nodeValue.length > 2 && JA_TEXT.test(n.nodeValue) && !n.parentElement.closest('script, style, svg, title, textarea'))
+      // ボタンやラベルなど1行で見せたいもの（white-space: nowrap）には入れない（Chrome は nowrap でも <wbr> で改行してしまう）
+      acceptNode: (n) => (n.nodeValue.length > 2 && JA_TEXT.test(n.nodeValue) && !n.parentElement.closest('script, style, svg, title, textarea')
+        && !/nowrap/.test(getComputedStyle(n.parentElement).whiteSpace))
         ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT,
     });
     const nodes = [];

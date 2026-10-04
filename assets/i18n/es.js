@@ -749,5 +749,14 @@
   "goods.7.name": "Pegatinas de Chin-Anago",
   "goods.7.desc": "Pegatinas de mi primerísimo juego, Chin-Anago. Anguila jardinera moteada o rayada: ¿cuál es cuál?",
   "goods.8.name": "Soporte acrílico de Crea",
-  "goods.8.desc": "Mi primer merchandising acrílico original: un soporte y un minillavero de la mascota Crea, vendidos en el Comic Market 102."
+  "goods.8.desc": "Mi primer merchandising acrílico original: un soporte y un minillavero de la mascota Crea, vendidos en el Comic Market 102.",
+  "hero.ctaFollow": "Seguir en X",
+  "follow.title": "¡Las últimas noticias, en X!",
+  "follow.desc": "Avances de desarrollo, eventos, nuevo merchandising y crónicas de viaje: en X es donde lo comparto primero.",
+  "follow.btn": "Seguir a @KamiEna_Game",
+  "follow.tripTitle": "¡El próximo viaje también lo contaré en X!",
+  "follow.tripDesc": "Las nuevas publicaciones «#ゲームクリエイターの〇〇旅行» llegan primero a X.",
+  "w.cgk.france": "¡Se expone en Francia!",
+  "m.cgk.france": "¡Exposición en Francia confirmada!",
+  "m.cgk.franceSoon": "Detalles muy pronto"
 };

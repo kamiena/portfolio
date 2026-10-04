@@ -730,5 +730,14 @@
   "goods.7.name": "《Chin-Anago》貼紙",
   "goods.7.desc": "處女作《Chin-Anago》的貼紙。哪隻是斑點花園鰻、哪隻是橫帶園鰻？",
   "goods.8.name": "Crea壓克力立牌",
-  "goods.8.desc": "第一次製作的原創壓克力周邊。在 Comic Market 102 販售了看板娘Crea的壓克力立牌和迷你壓克力鑰匙圈。"
+  "goods.8.desc": "第一次製作的原創壓克力周邊。在 Comic Market 102 販售了看板娘Crea的壓克力立牌和迷你壓克力鑰匙圈。",
+  "hero.ctaFollow": "在 X 上追蹤",
+  "follow.title": "最新消息在 X 發布！",
+  "follow.desc": "新作的製作情況、參展和新周邊的通知，還有旅行記，都會第一時間在 X 上分享。",
+  "follow.btn": "追蹤 @KamiEna_Game",
+  "follow.tripTitle": "下一次旅行也會在 X 上報導！",
+  "follow.tripDesc": "「#ゲームクリエイターの〇〇旅行」的新貼文，會第一時間在 X 上發布。",
+  "w.cgk.france": "確定在法國展出！",
+  "m.cgk.france": "確定在法國展出！",
+  "m.cgk.franceSoon": "詳情即將公布"
 };

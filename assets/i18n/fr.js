@@ -749,5 +749,14 @@
   "goods.7.name": "Autocollants Chin-Anago",
   "goods.7.desc": "Des autocollants de mon tout premier jeu, Chin-Anago. Anguille de jardin tachetée ou à bandes : laquelle est laquelle ?",
   "goods.8.name": "Support acrylique de Crea",
-  "goods.8.desc": "Mon premier goodie original en acrylique : un support et un mini porte-clés de la mascotte Crea, vendus au Comic Market 102."
+  "goods.8.desc": "Mon premier goodie original en acrylique : un support et un mini porte-clés de la mascotte Crea, vendus au Comic Market 102.",
+  "hero.ctaFollow": "Suivre sur X",
+  "follow.title": "Les dernières nouvelles sur X !",
+  "follow.desc": "Avancement des jeux, salons, nouveaux goodies, récits de voyage : c'est sur X que je les partage en premier.",
+  "follow.btn": "Suivre @KamiEna_Game",
+  "follow.tripTitle": "Le prochain voyage sera aussi raconté sur X !",
+  "follow.tripDesc": "Les nouveaux posts « #ゲームクリエイターの〇〇旅行 » arrivent d'abord sur X.",
+  "w.cgk.france": "Exposé en France !",
+  "m.cgk.france": "Exposition en France confirmée !",
+  "m.cgk.franceSoon": "Détails très bientôt"
 };
