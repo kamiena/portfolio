@@ -532,11 +532,23 @@ button { font: inherit; color: inherit; }
 .work-card.is-featured.is-reverse { flex-direction: row-reverse; }
 .work-card.is-featured.is-reverse .work-media { border-right: 0; border-left: var(--bd); }
 .work-card.is-featured .work-body { flex: 1; justify-content: center; padding: 30px; }
+/* 横長カードは、キービジュアルを枠いっぱいに（文章の方が高いとき上下に背景色が見えないよう、少しだけ左右を切る） */
+.work-card.is-featured .work-media--fill { align-items: stretch; }
+.work-card.is-featured .work-media--fill img { height: 100%; aspect-ratio: auto; object-fit: cover; }
+/* 中くらいの幅では、横長カードも普通のカードと同じ形に（横に並べると絵を大きく切ることになるため） */
+@media (max-width: 1179px) and (min-width: 861px) {
+  .work-card.is-featured { grid-column: auto; }
+  .work-card.is-featured, .work-card.is-featured.is-reverse { flex-direction: column; }
+  .work-card.is-featured .work-media, .work-card.is-featured.is-reverse .work-media { flex: none; display: block; border-right: 0; border-left: 0; border-bottom: var(--bd); }
+  .work-card.is-featured .work-media--fill img { height: auto; aspect-ratio: 16 / 9; }
+  .work-card.is-featured .work-body { justify-content: flex-start; padding: 20px 24px 24px; }
+}
 
 @media (max-width: 860px) {
   .works-grid { grid-template-columns: 1fr; gap: 26px; }
   .work-card.is-featured, .work-card.is-featured.is-reverse { flex-direction: column; }
-  .work-card.is-featured .work-media, .work-card.is-featured.is-reverse .work-media { border-right: 0; border-left: 0; border-bottom: var(--bd); }
+  .work-card.is-featured .work-media, .work-card.is-featured.is-reverse .work-media { flex: none; display: block; border-right: 0; border-left: 0; border-bottom: var(--bd); }
+  .work-card.is-featured .work-media--fill img { height: auto; aspect-ratio: 16 / 9; }
   .work-card.is-featured .work-body { padding: 20px 22px 24px; }
 }
 
