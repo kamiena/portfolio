@@ -749,5 +749,11 @@
   "goods.7.name": "Chin-Anago stickers",
   "goods.7.desc": "Stickers from my very first game, Chin-Anago. Spotted garden eel or splendid garden eel — which is which?",
   "goods.8.name": "Crea acrylic stand",
-  "goods.8.desc": "My first original acrylic merch: an acrylic stand and a mini acrylic keychain of the mascot Crea, sold at Comic Market 102."
+  "goods.8.desc": "My first original acrylic merch: an acrylic stand and a mini acrylic keychain of the mascot Crea, sold at Comic Market 102.",
+  "hero.ctaFollow": "Follow on X",
+  "follow.title": "Latest news on X!",
+  "follow.desc": "Development updates, event and new merch announcements, travel reports — X is where I share them first.",
+  "follow.btn": "Follow @KamiEna_Game",
+  "follow.tripTitle": "I'll report the next trip on X too!",
+  "follow.tripDesc": "New “#ゲームクリエイターの〇〇旅行” posts show up on X first."
 };

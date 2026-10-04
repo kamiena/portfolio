@@ -1389,3 +1389,30 @@ a.act-card:hover .act-more .icon { translate: 6px 0; }
   .goods-name { font-size: 15px; }
   .goods-desc { font-size: 13px; }
 }
+
+/* ---------- X をフォローしてもらう導線（冒頭・自己紹介・旅行記） ---------- */
+.btn--x { background: var(--ink); color: var(--white); }
+.btn--x:hover { box-shadow: 6px 6px 0 var(--yellow); }
+.follow-box { display: flex; align-items: center; gap: 14px 18px; margin: 6px 0 30px; padding: 16px 18px; background: var(--white); border: var(--bd); border-radius: 20px; box-shadow: var(--shadow); }
+.follow-icon { flex: none; display: grid; place-items: center; width: 54px; height: 54px; background: var(--ink); color: var(--white); border-radius: 50%; font-size: 24px; rotate: -6deg; }
+.follow-text { flex: 1; min-width: 0; }
+.follow-box .follow-title { margin: 0; font-weight: 900; font-size: 16.5px; line-height: 1.5; }
+.follow-box .follow-desc { margin: 2px 0 0; font-weight: 500; font-size: 13.5px; line-height: 1.75; }
+.follow-box .btn { flex: none; padding: 11px 18px; font-size: 15px; white-space: nowrap; }
+.trip-body > .follow-box { margin: 4px 0 0; background: var(--accent-soft); }
+@media (max-width: 760px) {
+  .follow-box { flex-wrap: wrap; }
+  .follow-box .btn { width: 100%; }
+}
+@media (max-width: 480px) {
+  .follow-box { gap: 12px; padding: 14px; }
+  .follow-icon { width: 44px; height: 44px; font-size: 20px; }
+  .follow-box .follow-title { font-size: 15.5px; }
+  .follow-box .btn { padding: 11px 12px; font-size: 14px; }
+}
+@media (max-width: 600px) {
+  /* 冒頭のボタンは「作品を見る」「プロフィール」を横に、「X でフォロー」はその下に横いっぱい */
+  .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-actions .btn { padding-inline: 12px; }
+  .hero-actions .btn--x { grid-column: 1 / -1; }
+}

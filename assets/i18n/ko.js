@@ -749,5 +749,11 @@
   "goods.7.name": "『Chin-Anago』 스티커",
   "goods.7.desc": "처녀작 『Chin-Anago』의 스티커. 점박이 정원장어와 줄무늬 정원장어, 어느 쪽이 어느 쪽일까요?",
   "goods.8.name": "Crea 아크릴 스탠드",
-  "goods.8.desc": "처음 만든 오리지널 아크릴 굿즈. 간판 캐릭터 Crea의 아크릴 스탠드와 미니 아크릴 키홀더를 코믹마켓 102에서 판매했습니다."
+  "goods.8.desc": "처음 만든 오리지널 아크릴 굿즈. 간판 캐릭터 Crea의 아크릴 스탠드와 미니 아크릴 키홀더를 코믹마켓 102에서 판매했습니다.",
+  "hero.ctaFollow": "X에서 팔로우",
+  "follow.title": "최신 소식은 X에서!",
+  "follow.desc": "신작 제작 과정, 이벤트 출전·새 굿즈 소식, 여행기까지 X에서 가장 먼저 전하고 있어요.",
+  "follow.btn": "@KamiEna_Game 팔로우",
+  "follow.tripTitle": "다음 여행도 X에서 리포트할게요!",
+  "follow.tripDesc": "‘#ゲームクリエイターの〇〇旅行’의 새 게시물은 X에서 가장 먼저 볼 수 있어요."
 };

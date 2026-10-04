@@ -749,5 +749,11 @@
   "goods.7.name": "《Chin-Anago》贴纸",
   "goods.7.desc": "处女作《Chin-Anago》的贴纸。哪只是斑点花园鳗、哪只是横带园鳗？",
   "goods.8.name": "Crea亚克力立牌",
-  "goods.8.desc": "第一次制作的原创亚克力周边。在 Comic Market 102 发售了看板娘Crea的亚克力立牌和迷你亚克力钥匙扣。"
+  "goods.8.desc": "第一次制作的原创亚克力周边。在 Comic Market 102 发售了看板娘Crea的亚克力立牌和迷你亚克力钥匙扣。",
+  "hero.ctaFollow": "在 X 上关注",
+  "follow.title": "最新消息在 X 发布！",
+  "follow.desc": "新作的制作情况、参展和新周边的通知，还有旅行记，都会第一时间在 X 上分享。",
+  "follow.btn": "关注 @KamiEna_Game",
+  "follow.tripTitle": "下一次旅行也会在 X 上报道！",
+  "follow.tripDesc": "“#ゲームクリエイターの〇〇旅行”的新帖子，会第一时间在 X 上发布。"
 };
