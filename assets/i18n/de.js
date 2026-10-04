@@ -755,5 +755,8 @@
   "follow.desc": "Entwicklungsstand, Event- und Merch-Ankündigungen, Reiseberichte – auf X teile ich alles zuerst.",
   "follow.btn": "@KamiEna_Game folgen",
   "follow.tripTitle": "Auch die nächste Reise gibt es auf X!",
-  "follow.tripDesc": "Neue „#ゲームクリエイターの〇〇旅行“-Posts erscheinen zuerst auf X."
+  "follow.tripDesc": "Neue „#ゲームクリエイターの〇〇旅行“-Posts erscheinen zuerst auf X.",
+  "w.cgk.france": "Ausstellung in Frankreich!",
+  "m.cgk.france": "Ausstellung in Frankreich bestätigt!",
+  "m.cgk.franceSoon": "Details folgen in Kürze"
 };

@@ -755,5 +755,8 @@
   "follow.desc": "Avancement des jeux, salons, nouveaux goodies, récits de voyage : c'est sur X que je les partage en premier.",
   "follow.btn": "Suivre @KamiEna_Game",
   "follow.tripTitle": "Le prochain voyage sera aussi raconté sur X !",
-  "follow.tripDesc": "Les nouveaux posts « #ゲームクリエイターの〇〇旅行 » arrivent d'abord sur X."
+  "follow.tripDesc": "Les nouveaux posts « #ゲームクリエイターの〇〇旅行 » arrivent d'abord sur X.",
+  "w.cgk.france": "Exposé en France !",
+  "m.cgk.france": "Exposition en France confirmée !",
+  "m.cgk.franceSoon": "Détails très bientôt"
 };

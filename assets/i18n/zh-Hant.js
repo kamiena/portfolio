@@ -736,5 +736,8 @@
   "follow.desc": "新作的製作情況、參展和新周邊的通知，還有旅行記，都會第一時間在 X 上分享。",
   "follow.btn": "追蹤 @KamiEna_Game",
   "follow.tripTitle": "下一次旅行也會在 X 上報導！",
-  "follow.tripDesc": "「#ゲームクリエイターの〇〇旅行」的新貼文，會第一時間在 X 上發布。"
+  "follow.tripDesc": "「#ゲームクリエイターの〇〇旅行」的新貼文，會第一時間在 X 上發布。",
+  "w.cgk.france": "確定在法國展出！",
+  "m.cgk.france": "確定在法國展出！",
+  "m.cgk.franceSoon": "詳情即將公布"
 };

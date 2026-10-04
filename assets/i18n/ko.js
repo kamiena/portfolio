@@ -755,5 +755,8 @@
   "follow.desc": "신작 제작 과정, 이벤트 출전·새 굿즈 소식, 여행기까지 X에서 가장 먼저 전하고 있어요.",
   "follow.btn": "@KamiEna_Game 팔로우",
   "follow.tripTitle": "다음 여행도 X에서 리포트할게요!",
-  "follow.tripDesc": "‘#ゲームクリエイターの〇〇旅行’의 새 게시물은 X에서 가장 먼저 볼 수 있어요."
+  "follow.tripDesc": "‘#ゲームクリエイターの〇〇旅行’의 새 게시물은 X에서 가장 먼저 볼 수 있어요.",
+  "w.cgk.france": "프랑스 전시 결정!",
+  "m.cgk.france": "프랑스 전시가 결정되었습니다!",
+  "m.cgk.franceSoon": "자세한 내용은 곧 발표합니다"
 };

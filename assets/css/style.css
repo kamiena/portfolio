@@ -1428,3 +1428,11 @@ a.act-card:hover .act-more .icon { translate: 6px 0; }
   .hero-actions .btn { padding-inline: 12px; }
   .hero-actions .btn--x { grid-column: 1 / -1; }
 }
+
+/* お知らせのラベル（02 Kagane のフランス展示決定など） */
+.work-badge--news, .t-yellow .work-badge--news { background: var(--pink); color: var(--white); }
+.work-badge--news .icon { color: var(--yellow); }
+.wm-news { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin: 0; padding: 3px 12px; background: var(--pink); color: var(--white); border: var(--bd-thin); border-radius: 999px; box-shadow: 3px 3px 0 var(--ink); font-weight: 900; font-size: 13.5px; line-height: 1.5; rotate: -1.5deg; }
+.wm-news .icon { flex: none; color: var(--yellow); font-size: 1.1em; }
+.wm-news-main, .wm-news-sub { display: inline-block; }
+.wm-news-sub { font-size: 0.88em; opacity: 0.92; }
