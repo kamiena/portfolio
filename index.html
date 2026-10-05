@@ -7,6 +7,7 @@
   <meta name="description" content="「楽しいを届ける」を軸に「kawaii × クセになる遊び」なゲームを作るインディーゲームクリエイター、カミエナ（KamiEna）のポートフォリオ。インディーゲームスタジオ「クレアクラン」代表。『ガーデンハント』『トラップス』『CÔGEIMU』『Immersive Novel』『走れ！クレアちゃん』『ぶんまわしヒーロー』など。">
   <meta name="theme-color" content="#38b6f5">
 
+  <link rel="canonical" href="https://kamiena.github.io/portfolio/">
   <link rel="alternate" hreflang="ja" href="https://kamiena.github.io/portfolio/">
   <link rel="alternate" hreflang="en" href="https://kamiena.github.io/portfolio/?lang=en">
   <link rel="alternate" hreflang="zh-Hans" href="https://kamiena.github.io/portfolio/?lang=zh-Hans">
@@ -19,7 +20,7 @@
   <link rel="alternate" hreflang="x-default" href="https://kamiena.github.io/portfolio/">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="KamiEna Portfolio">
+  <meta property="og:site_name" content="カミエナ（KamiEna）ポートフォリオ">
   <meta property="og:title" content="カミエナ（KamiEna）｜インディーゲームクリエイター">
   <meta property="og:description" content="「楽しいを届ける」を軸に「kawaii × クセになる遊び」なゲームを作る、インディーゲームクリエイター・カミエナのポートフォリオ。">
   <meta property="og:url" content="https://kamiena.github.io/portfolio/">
@@ -68,6 +69,12 @@
       }
       lang = lang || 'ja';
       window.KE_LANG = lang;
+      // 言語別の URL（?lang=en など）は、それぞれを正規の URL にする（日本語は ?lang なし）
+      try {
+        var urlLang = norm(new URLSearchParams(location.search).get('lang'));
+        var canon = document.querySelector('link[rel="canonical"]');
+        if (canon && urlLang && urlLang !== 'ja') canon.href = 'https://kamiena.github.io/portfolio/?lang=' + urlLang;
+      } catch (e) {}
       if (lang !== 'ja') {
         var root = document.documentElement;
         root.classList.add('i18n-pending');
@@ -85,7 +92,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "カミエナ",
-    "alternateName": "KamiEna",
+    "alternateName": ["KamiEna", "かみえな", "Kamiena", "カミエナ（KamiEna）"],
     "description": "「楽しいを届ける」を軸に「kawaii × クセになる遊び」なゲームを作るインディーゲームクリエイター",
     "jobTitle": "インディーゲームクリエイター / ディレクター / プロデューサー",
     "worksFor": { "@type": "Organization", "name": "クレアクラン（CREA CLAN）", "url": "https://sites.google.com/view/creaclan" },
@@ -94,8 +101,20 @@
     "sameAs": [
       "https://x.com/KamiEna_Game",
       "https://www.youtube.com/@KamiEna_Game",
-      "https://www.arsobit.com/creator-kamiena/"
+      "https://www.arsobit.com/creator-kamiena/",
+      "https://sites.google.com/view/creaclan/creator/kamiena"
     ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "カミエナ（KamiEna）ポートフォリオ",
+    "alternateName": ["KamiEna Portfolio", "カミエナ ポートフォリオ", "KamiEna"],
+    "url": "https://kamiena.github.io/portfolio/",
+    "inLanguage": ["ja", "en", "zh-Hans", "zh-Hant", "ko", "fr", "de", "es", "it"],
+    "author": { "@type": "Person", "name": "カミエナ", "alternateName": "KamiEna", "url": "https://kamiena.github.io/portfolio/" }
   }
   </script>
 </head>
