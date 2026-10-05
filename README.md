@@ -48,6 +48,20 @@ python3 -m http.server 8000
 
 固有名詞の表記は、ゲーム内の公式訳（『ガーデンハント』の Meina・Slugnail・Numeri Trails など）と CÔGEIMU 公式サイトの英語表記に合わせています。
 
+## Google 検索に出るようにする（SEO）
+
+サイト側で入れてあるもの：
+- タイトル・説明文・見出しに「カミエナ」「KamiEna」を両方入れている
+- 検索エンジン向けの人物情報（`index.html` の `application/ld+json`）に、呼び名として KamiEna／かみえな／Kamiena、本人のプロフィール（X・YouTube・ars●bit・クレアクラン）を登録
+- サイト名の情報（WebSite）、正規の URL（canonical）、言語ごとの URL（hreflang）
+- `sitemap.xml`（ページ一覧。Google Search Console で送信する）
+
+Google Search Console（https://search.google.com/search-console）での手順：
+1. 「URL プレフィックス」で `https://kamiena.github.io/portfolio/` を登録
+2. 所有権の確認は「HTML タグ」。表示された `<meta name="google-site-verification" ...>` を `index.html` の `<head>` に入れて公開してから「確認」
+3. 「サイトマップ」に `sitemap.xml` を入力して送信
+4. 「URL 検査」でトップページを調べ、「インデックス登録をリクエスト」
+
 ## GitHub Pages で公開・更新する
 
 1. GitHub のリポジトリ → **Settings → Pages**
