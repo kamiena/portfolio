@@ -1458,3 +1458,6 @@ a.act-card:hover .act-more .icon { translate: 6px 0; }
 .wm-credits > div { display: grid; gap: 1px; padding: 8px 0; border-bottom: 2px dashed rgba(29, 32, 69, 0.18); }
 .wm-credits dt { font-family: var(--font-brand); font-size: 11px; letter-spacing: 0.06em; opacity: 0.7; }
 .wm-credits dd { margin: 0; font-weight: 800; font-size: 15px; line-height: 1.5; }
+
+/* 声優さんのチップは目立たせる（作品カード） */
+.chip--cv, .work-card .chip--cv { background: var(--ink); color: var(--white); border-color: var(--ink); }
