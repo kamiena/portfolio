@@ -185,7 +185,7 @@
   "a.qa.d": "Impressioni sui giochi, domande sullo sviluppo o lettere per la radio: inviale in forma anonima! Il tuo messaggio potrebbe essere letto in trasmissione.",
   "a.qa.more": "Invia una domanda",
   "a.diary.t": "Un creatore di giochi in viaggio a…",
-  "a.diary.d": "Una serie in cui racconto le mie scoperte all'estero con lo sguardo di un creatore di giochi. I viaggi a Taiwan, Bali, in Egitto, alle Hawaii e nel Regno Unito e in Italia, raccolti dai miei post su X.",
+  "a.diary.d": "Una serie in cui racconto le mie scoperte all'estero con lo sguardo di un creatore di giochi. I viaggi in Francia, a Taiwan, Bali, in Egitto, alle Hawaii e nel Regno Unito e in Italia, raccolti dai miei post su X.",
   "a.diary.more": "Leggi il diario di viaggio",
 
   "med.sub": "TV, stampa e media",
@@ -776,5 +776,6 @@
   "h.2610b.t": "Prima mondiale di ARE YOU THERE? alla mostra internazionale “Anima Ludens” ad Arles, Francia",
   "h.2610b.d": "Programma principale del festival “Festival Octobre Numérique – Faire Monde 2026” (Chapelle des Trinitaires, dal 10 ottobre all'8 novembre). La prima mostra all'estero per CÔGEIMU, e anche per KamiEna.",
   "h.2610c.t": "Annunciate le voci di ARE YOU THERE?",
-  "h.2610c.d": "Nao Toyama dà la voce alla versione giapponese, Sally Amaki a quella inglese."
+  "h.2610c.d": "Nao Toyama dà la voce alla versione giapponese, Sally Amaki a quella inglese.",
+  "trip.france": "Francia"
 };

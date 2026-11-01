@@ -6,6 +6,8 @@
     python3 tools/update_trips.py
 
 - ポストの取得には、ログイン不要の非公式 API（FxTwitter）を使います。仕様が変わると動かなくなることがあります。
+  検索（/2/search）が使えないときは、アカウントのタイムラインを新しい順に TIMELINE_PAGES ページぶん読んで探します。
+  そこまでさかのぼれない古い旅は、index.html にいま載っている内容をそのまま残します（ポストが減る更新はしません）。
 - 新しい旅行を足すときは、下の TRIPS に1行追加し、assets/i18n/*.js に旅行名のキー（例: "trip.korea"）を足してください。
 - ハッシュタグをつける前の旅（ハワイ、イギリス・イタリア）は、期間（since〜until）でポストを集めています。
   旅と関係ないポストが混ざったら、SKIP にポストの ID を足してください（ほかの人へのリプライは自動で外します）。
@@ -21,6 +23,7 @@ IMG_DIR = ROOT / 'assets/img/trip'
 ACCOUNT = 'KamiEna_Game'
 # 新しい旅行ほど上に。tag（ハッシュタグ）か、since/until（期間。until の日は含まない）でポストを集める
 TRIPS = [
+    dict(key='france', name_key='trip.france', name='フランス', color='--pink', tag='ゲームクリエイターのフランス旅行'),
     dict(key='taiwan', name_key='trip.tw', name='台湾', color='--yellow', tag='ゲームクリエイターの台湾旅行'),
     dict(key='bali', name_key='trip.bali', name='バリ島', color='--lime', tag='ゲームクリエイターのバリ島旅行'),
     dict(key='egypt', name_key='trip.egypt', name='エジプト', color='--orange', tag='ゲームクリエイターのエジプト旅行'),
@@ -33,6 +36,7 @@ SKIP = {
     '1028622395311939586', '1028971876318466050',   # イギリス・イタリアの前：制作合宿
 }
 JST = datetime.timezone(datetime.timedelta(hours=9))
+TIMELINE_PAGES = 40   # 検索が使えないときに読むタイムラインのページ数（1ページ約20件）
 
 def get_json(url):
     for attempt in range(4):
@@ -57,6 +61,43 @@ def search(query):
         if not results or not new or not nxt or nxt == cursor: break
         cursor = nxt; time.sleep(1)
     return list(found.values())
+
+_timeline = None
+def timeline():
+    """アカウントのタイムライン（本人のポストだけ）と、読めたいちばん古い時刻を返す。"""
+    global _timeline
+    if _timeline is None:
+        found, cursor, oldest = {}, None, None
+        for _ in range(TIMELINE_PAGES):
+            url = f'https://api.fxtwitter.com/2/profile/{ACCOUNT}/statuses' + ('?cursor=' + urllib.parse.quote(cursor) if cursor else '')
+            d = get_json(url)
+            if not d: break
+            results = d.get('results') or []
+            own = [t for t in results if (t.get('author') or {}).get('screen_name', '').lower() == ACCOUNT.lower()]
+            for t in own: found.setdefault(t['id'], t)
+            if own: oldest = min([oldest or own[0]['created_timestamp']] + [t['created_timestamp'] for t in own])
+            nxt = (d.get('cursor') or {}).get('bottom')
+            if not results or not nxt or nxt == cursor: break
+            cursor = nxt; time.sleep(1)
+        _timeline = (list(found.values()), oldest)
+    return _timeline
+
+def collect(trip):
+    tag = trip.get('tag')
+    query = f'#{tag} from:{ACCOUNT}' if tag else f'from:{ACCOUNT} since:{trip["since"]} until:{trip["until"]}'
+    posts = search(query)
+    if not posts:
+        # 検索が使えないときはタイムラインから。旅の始まりより前まで読めていないときは使わない
+        posts, oldest = timeline()
+        if tag:
+            posts = [p for p in posts if '#' + tag in p['text']]
+        else:
+            lo = datetime.datetime.fromisoformat(trip['since']).replace(tzinfo=JST).timestamp()
+            hi = datetime.datetime.fromisoformat(trip['until']).replace(tzinfo=JST).timestamp()
+            posts = [p for p in posts if lo <= p['created_timestamp'] < hi]
+        if not posts or oldest is None or oldest > min(p['created_timestamp'] for p in posts) - 86400:
+            return []
+    return sorted((p for p in posts if p['id'] not in SKIP and not is_reply_to_others(p)), key=lambda p: p['created_timestamp'])
 
 def is_reply_to_others(p):
     to = p.get('replying_to')
@@ -83,13 +124,24 @@ def save_image(media, post_id):
     im.save(IMG_DIR / f'{post_id}.webp', 'WEBP', quality=78, method=6)
     return im.size
 
-def build():
+def existing(index_text, key):
+    """index.html にいま載っている旅のセクション・ジャンプボタン・ポスト数。"""
+    sec = re.search(rf'        <section class="trip" id="trip-{re.escape(key)}".*?</section>', index_text, re.S)
+    btn = re.search(rf'<button class="chip trip-jump" type="button" data-jump="trip-{re.escape(key)}".*?</button>', index_text, re.S)
+    if not sec or not btn: return None
+    return sec.group(0), btn.group(0), sec.group(0).count('class="trip-post"')
+
+def build(index_text):
     IMG_DIR.mkdir(parents=True, exist_ok=True)
     nav, sections = [], []
     for trip in TRIPS:
         key, name_key, name, color, tag = trip['key'], trip['name_key'], trip['name'], trip['color'], trip.get('tag')
-        query = f'#{tag} from:{ACCOUNT}' if tag else f'from:{ACCOUNT} since:{trip["since"]} until:{trip["until"]}'
-        posts = sorted((p for p in search(query) if p['id'] not in SKIP and not is_reply_to_others(p)), key=lambda p: p['created_timestamp'])
+        posts = collect(trip)
+        old = existing(index_text, key)
+        if old and len(posts) < old[2]:
+            # 取れたポストが今より少ないとき（API の不調・さかのぼれない古い旅）は、今の内容を残す
+            print(f'{key}: kept as is ({old[2]} posts on the page, {len(posts)} found)')
+            sections.append(old[0]); nav.append(old[1]); continue
         if not posts:
             print('no posts for', key); continue
         days = [datetime.datetime.fromtimestamp(p['created_timestamp'], JST) for p in posts]
@@ -123,9 +175,9 @@ def replace_between(text, name, body):
     return pat.sub(lambda m: m.group(1) + body + m.group(3), text, count=1)
 
 if __name__ == '__main__':
-    nav, sections = build()
     index = ROOT / 'index.html'
     text = index.read_text(encoding='utf-8')
+    nav, sections = build(text)
     text = replace_between(text, 'trip-nav', nav)
     text = replace_between(text, 'trip-posts', '\n' + sections + '\n        ')
     index.write_text(text, encoding='utf-8')
