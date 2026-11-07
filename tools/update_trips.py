@@ -11,6 +11,7 @@
 - 新しい旅行を足すときは、下の TRIPS に1行追加し、assets/i18n/*.js に旅行名のキー（例: "trip.korea"）を足してください。
 - ハッシュタグをつける前の旅（ハワイ、イギリス・イタリア）は、期間（since〜until）でポストを集めています。
   旅と関係ないポストが混ざったら、SKIP にポストの ID を足してください（ほかの人へのリプライは自動で外します）。
+- 旅のあとに X の記事で滞在記を書いたときは、その旅の articles に（日付, タイトル, ポストの URL）を足すと、一覧の上にリンクが並びます。
 - index.html の <!-- trip-nav:start --> 〜 <!-- trip-nav:end --> と
   <!-- trip-posts:start --> 〜 <!-- trip-posts:end --> の間だけを書き換えます。
 """
@@ -23,7 +24,12 @@ IMG_DIR = ROOT / 'assets/img/trip'
 ACCOUNT = 'KamiEna_Game'
 # 新しい旅行ほど上に。tag（ハッシュタグ）か、since/until（期間。until の日は含まない）でポストを集める
 TRIPS = [
-    dict(key='france', name_key='trip.france', name='フランス', color='--pink', tag='ゲームクリエイターのフランス旅行'),
+    dict(key='france', name_key='trip.france', name='フランス', color='--pink', tag='ゲームクリエイターのフランス旅行',
+         articles=[  # X の記事で書いた滞在記（日付, タイトル, 記事を載せたポスト）
+             ('2026.11.03', 'フランス滞在記 #1｜いざフランスへ！ 羽田から南仏・アルルへの旅', 'https://x.com/KamiEna_Game/status/2117452811030142990'),
+             ('2026.11.03', 'フランス滞在記 #2｜まるで異世界！南仏・アルルの街を大探索！', 'https://x.com/KamiEna_Game/status/2117572031122444526'),
+             ('2026.11.05', 'フランス滞在記 #3｜光と影が美しい夜のアルル！ チーズとワインと街歩き', 'https://x.com/KamiEna_Game/status/2118309506707075556'),
+         ]),
     dict(key='taiwan', name_key='trip.tw', name='台湾', color='--yellow', tag='ゲームクリエイターの台湾旅行'),
     dict(key='bali', name_key='trip.bali', name='バリ島', color='--lime', tag='ゲームクリエイターのバリ島旅行'),
     dict(key='egypt', name_key='trip.egypt', name='エジプト', color='--orange', tag='ゲームクリエイターのエジプト旅行'),
@@ -158,9 +164,17 @@ def build(index_text):
             text = html.escape(excerpt(clean(p['text']))).replace('\n', '<br>')
             items.append(f'              <li class="trip-post"><a href="{p["url"]}" target="_blank" rel="noopener">{photo}<span class="trip-text"><time datetime="{day:%Y-%m-%d}">{day:%Y.%m.%d}</time><span lang="ja">{text}</span></span><span class="trip-more"><span data-i18n="trip.viewOnX">X で見る</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>')
         tag_link = f'<a href="https://x.com/hashtag/{urllib.parse.quote(tag)}?f=live" target="_blank" rel="noopener">#{tag}</a>' if tag else ''
+        articles = ''
+        if trip.get('articles'):
+            rows = '\n'.join(f'            <li><a href="{url}" target="_blank" rel="noopener"><b data-i18n="trip.articleTag">X の記事</b><span><time>{date}</time><span lang="ja">{html.escape(title)}</span></span></a></li>' for date, title, url in trip['articles'])
+            articles = f'''
+          <p class="trip-articles-h" data-i18n="trip.articles">旅のあとに書いた滞在記</p>
+          <ul class="press trip-articles">
+{rows}
+          </ul>'''
         sections.append(f'''        <section class="trip" id="trip-{key}" style="--c:var({color})">
           <h3 class="wm-h"><svg class="bolt" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-bolt"/></svg><span data-i18n="{name_key}">{name}</span></h3>
-          <p class="trip-meta"><time>{days[0]:%Y.%m.%d}–{days[-1]:%m.%d}</time><span>{len(posts)} posts</span>{tag_link}</p>
+          <p class="trip-meta"><time>{days[0]:%Y.%m.%d}–{days[-1]:%m.%d}</time><span>{len(posts)} posts</span>{tag_link}</p>{articles}
           <ul class="trip-posts">
 {chr(10).join(items)}
           </ul>
