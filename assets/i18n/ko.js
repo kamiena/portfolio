@@ -854,5 +854,10 @@
   "gh.alt.pkg": "손으로 만든 『가든 헌트』 패키지판(앞·뒤)",
   "gh.alt.cab": "시부야 ‘404 Not Found’의 특제 기체로 즐기는 『가든 헌트』",
   "cgk.alt.arles": "프랑스 아를 Chapelle des Trinitaires에 전시된 Kagane",
-  "cgk.alt.chapel": "‘Anima Ludens’의 전시장이 된 Chapelle des Trinitaires"
+  "cgk.alt.chapel": "‘Anima Ludens’의 전시장이 된 Chapelle des Trinitaires",
+  "l.ghsite.t": "『가든 헌트』 공식 사이트",
+  "l.trsite.t": "『Traps』 공식 사이트",
+  "l.crsite.t": "『Crea Run』 공식 사이트",
+  "h.2611b.t": "CREA CLAN과 『가든 헌트』 『Traps』 『Crea Run』의 공식 사이트 공개",
+  "h.2611b.d": "작품별 공식 사이트와 새로워진 CREA CLAN 공식 사이트를 함께 공개했어요."
 };

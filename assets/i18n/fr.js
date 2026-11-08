@@ -854,5 +854,10 @@
   "gh.alt.pkg": "L'édition boîte de Garden Hunt, faite main (recto et verso)",
   "gh.alt.cab": "Garden Hunt sur une borne d'arcade spéciale au 404 Not Found de Shibuya",
   "cgk.alt.arles": "Kagane exposée à la Chapelle des Trinitaires d'Arles",
-  "cgk.alt.chapel": "La Chapelle des Trinitaires, lieu d'Anima Ludens"
+  "cgk.alt.chapel": "La Chapelle des Trinitaires, lieu d'Anima Ludens",
+  "l.ghsite.t": "Site officiel de Garden Hunt",
+  "l.trsite.t": "Site officiel de Traps",
+  "l.crsite.t": "Site officiel de Crea Run",
+  "h.2611b.t": "Lancement des sites officiels de CREA CLAN, Garden Hunt, Traps et Crea Run",
+  "h.2611b.d": "Un site pour chaque jeu, lancé en même temps que le nouveau site de CREA CLAN."
 };
