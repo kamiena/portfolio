@@ -517,7 +517,7 @@
         for (let i = at + 1; i < at + word.length; i++) cuts.delete(i);
       }
     });
-    return [...cuts].filter((i) => !NO_START.includes(text[i]) && text[i] !== ' ' && text[i - 1] !== ' ').sort((a, b) => a - b);
+    return [...cuts].filter((i) => !NO_START.includes(text[i]) && text[i] !== ' ' && text[i - 1] !== ' ' && text[i] !== '\u2011' && text[i - 1] !== '\u2011').sort((a, b) => a - b);
   };
   const breakPhrases = (scope) => {
     if (!window.KE_BUDOUX || currentLang !== 'ja' || !scope) return;
@@ -532,6 +532,8 @@
     nodes.forEach((node) => {
       let text = node.nodeValue;
       NO_SPACE_BREAK.forEach((name) => { text = text.split(name).join(name.replace(/ /g, '\u00a0')); });
+      // 「S-08ab」「4キ-1」のようなブース番号は、ハイフンのところで切らない（改行しないハイフンに置きかえる）
+      text = text.replace(/(?<=[A-Za-z0-9\u3041-\u309f\u30a1-\u30fa])-(?=[A-Za-z0-9])/g, '\u2011');
       const cuts = phraseCuts(text);
       if (!cuts.length) { if (text !== node.nodeValue) node.nodeValue = text; return; }
       const frag = document.createDocumentFragment();

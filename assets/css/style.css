@@ -1303,6 +1303,10 @@ a.act-card:hover .act-more .icon { translate: 6px 0; }
 .trip-play .icon { width: 44px; height: 44px; padding: 11px; background: rgba(29, 32, 69, 0.72); color: var(--white); border-radius: 50%; }
 .trip-text { display: grid; gap: 4px; padding: 10px 12px 2px; font-weight: 500; font-size: 13.5px; line-height: 1.7; }
 .trip-text time { font-family: var(--font-brand); font-size: 12px; }
+/* イベント出展の記録：イベント名を太字で、参加予定のものに札をつける */
+.ev-name { font-weight: 900; font-size: 14.5px; line-height: 1.5; }
+#work-events .trip-text > span { -webkit-line-clamp: 8; }   /* 出展の説明は短いので、最後まで見せる */
+.ev-tag { justify-self: start; padding: 0 9px; background: var(--pink); color: var(--white); border: 2px solid var(--ink); border-radius: 999px; font-style: normal; font-weight: 900; font-size: 11.5px; line-height: 1.6; }
 .trip-text > span { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
 .trip-more { display: flex; align-items: center; gap: 4px; margin-top: auto; padding: 6px 12px 10px; font-weight: 900; font-size: 12px; }
 .trip-more .icon { width: 0.9em; height: 0.9em; }
