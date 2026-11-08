@@ -854,5 +854,10 @@
   "gh.alt.pkg": "The handmade Garden Hunt package edition (front and back)",
   "gh.alt.cab": "Garden Hunt on a custom arcade cabinet at 404 Not Found, Shibuya",
   "cgk.alt.arles": "Kagane on display at the Chapelle des Trinitaires in Arles, France",
-  "cgk.alt.chapel": "The Chapelle des Trinitaires, venue of Anima Ludens"
+  "cgk.alt.chapel": "The Chapelle des Trinitaires, venue of Anima Ludens",
+  "l.ghsite.t": "Garden Hunt official website",
+  "l.trsite.t": "Traps official website",
+  "l.crsite.t": "Crea Run official website",
+  "h.2611b.t": "Launched official websites for CREA CLAN, Garden Hunt, Traps and Crea Run",
+  "h.2611b.d": "A website for each game, released together with the renewed CREA CLAN website."
 };

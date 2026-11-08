@@ -854,5 +854,10 @@
   "gh.alt.pkg": "手工制作的《花园狩猎》实体版（正面・背面）",
   "gh.alt.cab": "在涩谷“404 Not Found”的特制机台上可玩的《花园狩猎》",
   "cgk.alt.arles": "在法国阿尔勒 Chapelle des Trinitaires 展出的 Kagane",
-  "cgk.alt.chapel": "成为“Anima Ludens”会场的 Chapelle des Trinitaires"
+  "cgk.alt.chapel": "成为“Anima Ludens”会场的 Chapelle des Trinitaires",
+  "l.ghsite.t": "《花园狩猎》官方网站",
+  "l.trsite.t": "《Traps》官方网站",
+  "l.crsite.t": "《Crea Run》官方网站",
+  "h.2611b.t": "开设 CREA CLAN 与《花园狩猎》《Traps》《Crea Run》的官方网站",
+  "h.2611b.d": "各作品的官方网站，与全新改版的 CREA CLAN 官方网站一同公开。"
 };
