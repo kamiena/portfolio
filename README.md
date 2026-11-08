@@ -193,7 +193,7 @@ ACTIVITY の「PHOTO ART」を押すと、写真の一覧（詳細ウィンド�
 
 ## 情報の出典
 
-- クレアクラン公式HP（カミエナのページ）: https://sites.google.com/view/creaclan/creator/kamiena
+- クレアクラン公式HP（カミエナのページ）: https://kamiena.github.io/CreaClan/#about
 - X（@KamiEna_Game）のポスト
 - GameArtPRJ CÔGEIMU 公式サイト: https://kamiena.github.io/cogeimu/
 - 各作品の Steam ストアページ、掲載記事・番組（サイト内の「MEDIA」と各作品の「掲載メディア」を参照）
