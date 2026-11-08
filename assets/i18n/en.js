@@ -211,7 +211,6 @@
   "o.mudauchi": "Mudauchi Games",
   "o.treasure": "Treasure App",
   "o.g65535": "Gameplay 65535",
-  "o.indiebu": "Indie Game-bu",
   "med.video": "Videos & web shows",
   "o.amase": "Momo Amase's Social Studies",
   "o.fei": "Fei Channel",
@@ -399,7 +398,6 @@
   "v.cr.1": "Crea Run — introduction video",
   "p.cr.1": "Crea Run (PC) — summary page",
   "p.cr.2": "Action game Crea Run: craft your way through the stages",
-  "p.cr.3": "[Indie game spotlight] Crea Run",
 
   "m.bu.catch": "Swing it, smash it… take a break!?",
   "m.bu.p1": "Attack, then rest — your body recovers and builds muscle! With enough muscle, trees, rocks and even beasts — anything around you — become weapons.",

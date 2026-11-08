@@ -211,7 +211,6 @@
   "o.mudauchi": "Mudauchi Games",
   "o.treasure": "Treasure App",
   "o.g65535": "Gameplay 65535",
-  "o.indiebu": "独立游戏部",
   "med.video": "视频・网络节目",
   "o.amase": "天濑Momo的社会见学",
   "o.fei": "Fei Channel",
@@ -399,7 +398,6 @@
   "v.cr.1": "《Crea Run》介绍影片",
   "p.cr.1": "PC版《Crea Run》汇总页面",
   "p.cr.2": "动作游戏《Crea Run》：靠打造冲过关卡吧",
-  "p.cr.3": "[独立游戏介绍] Crea Run",
 
   "m.bu.catch": "抡起来、打飞它、休息一下！？",
   "m.bu.p1": "攻击之后让身体休息，就会产生超量恢复，长出肌肉！只要有肌肉，不管是树木、岩石还是魔兽，身边的一切都能变成武器。",

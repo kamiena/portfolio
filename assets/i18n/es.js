@@ -211,7 +211,6 @@
   "o.mudauchi": "Mudauchi Games",
   "o.treasure": "Treasure App",
   "o.g65535": "Gameplay 65535",
-  "o.indiebu": "Indie Game-bu",
   "med.video": "Vídeos y programas web",
   "o.amase": "Momo Amase's Social Studies",
   "o.fei": "Fei Channel",
@@ -399,7 +398,6 @@
   "v.cr.1": "Crea Run — vídeo de presentación",
   "p.cr.1": "Crea Run (PC) — página resumen",
   "p.cr.2": "Juego de acción Crea Run: supera los niveles fabricando",
-  "p.cr.3": "[Juego indie destacado] Crea Run",
 
   "m.bu.catch": "¡Agita, golpea y… ¿descansa?!",
   "m.bu.p1": "Ataca y luego descansa: ¡tu cuerpo se recupera y gana músculo! Con suficiente músculo, árboles, rocas e incluso bestias —todo lo que te rodea— se convierten en armas.",
