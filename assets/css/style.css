@@ -406,6 +406,14 @@ button { font: inherit; color: inherit; }
 }
 /* スマホでは、ダウンロード数（6桁）の2つは1段ずつ使う */
 @media (max-width: 540px) { .stat--wide { grid-column: 1 / -1; } }
+/* 海外出展のバナー：横いっぱいに、数字と説明を横並びで */
+.stat--world { grid-column: 1 / -1; }
+.stat--world .stat-link { display: flex; align-items: center; justify-content: center; gap: 6px 22px; flex-wrap: wrap; }
+.stat--world .stat-num .icon { font-size: 0.72em; color: var(--orange); margin-right: 8px; vertical-align: -0.04em; }
+.stat--world .stat-label { text-align: left; }
+.stat--world .stat-label b { display: block; font-size: 1.3em; }
+.stat--world .stat-label span { display: block; font-weight: 700; }
+@media (max-width: 540px) { .stat--world .stat-label { text-align: center; } }
 
 /* ---------- marquee ---------- */
 .marquee-wrap { overflow: hidden; padding: 44px 0 36px; }
