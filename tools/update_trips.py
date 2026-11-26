@@ -24,6 +24,7 @@ IMG_DIR = ROOT / 'assets/img/trip'
 ACCOUNT = 'KamiEna_Game'
 # 新しい旅行ほど上に。tag（ハッシュタグ）か、since/until（期間。until の日は含まない）でポストを集める
 TRIPS = [
+    dict(key='china', name_key='trip.china', name='中国', color='--orange', tag='ゲームクリエイターの中国旅行'),
     dict(key='france', name_key='trip.france', name='フランス', color='--pink', tag='ゲームクリエイターのフランス旅行',
          articles=[  # X の記事で書いた滞在記（日付, タイトル, 記事を載せたポスト）
              ('2026.11.03', 'フランス滞在記 #1｜いざフランスへ！ 羽田から南仏・アルルへの旅', 'https://x.com/KamiEna_Game/status/2117452811030142990'),
